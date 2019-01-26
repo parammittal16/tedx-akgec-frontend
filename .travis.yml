@@ -1,19 +1,21 @@
-language: node_js # Building with node js
+language: node_js
 node_js:
-    - stable # Download the stable node version
-
-# Blocklist
+  - "9"
+dist: trusty
+sudo: required
 branches:
-    except:
-      - gh-pages # will be deployed to, no need to build it
-
+  only:
+  - master
+before_script:
+  - npm install -g @angular/cli
 script:
-    - npm run build # Generates the dist folder with built angular app
-
+  - ng lint
+  - npm run test-headless
+  - ng build --prod --base-href https://parammittal16.github.io/tedx-akgec-frontend/
 deploy:
-    provider: pages
-    skip_cleanup: true # Prevent travis from cleaning out the branch before the deploy occurs
-    github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
-    on:
-        branch: master # Build only from master
-    local_dir: dist # Only copy the dist conents
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: dist/tedx-akgec-frontend
+  on:
+    branch: master
