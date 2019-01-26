@@ -18,7 +18,7 @@ install:
 
 script:
   - yarn lint
-  - yarn build --base-href /tedx-akgec-frontent/
+  - yarn build
   - mv dist/tedx-akgec-frontent/index.html dist/tedx-akgec-frontent/404.html
 deploy:
   provider: pages
