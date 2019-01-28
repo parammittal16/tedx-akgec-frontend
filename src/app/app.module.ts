@@ -2,13 +2,23 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { TaHomeComponent } from './Components/ta-home/ta-home.component';
+import { TaAdminComponent } from './Components/ta-admin/ta-admin.component';
+import { TaAdminDashboardComponent } from './Components/ta-admin-dashboard/ta-admin-dashboard.component';
+import { AppRoutingModule } from './app-routing.module';
+import { TaSponsorsComponent } from './Components/ta-sponsors/ta-sponsors.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TaHomeComponent,
+    TaAdminComponent,
+    TaAdminDashboardComponent,
+    TaSponsorsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
