@@ -7,6 +7,8 @@ import { TaAdminComponent } from './Components/ta-admin/ta-admin.component';
 import { TaAdminDashboardComponent } from './Components/ta-admin-dashboard/ta-admin-dashboard.component';
 import { AppRoutingModule } from './app-routing.module';
 import { TaSponsorsComponent } from './Components/ta-sponsors/ta-sponsors.component';
+import { DataService } from './Services/data.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,9 +20,10 @@ import { TaSponsorsComponent } from './Components/ta-sponsors/ta-sponsors.compon
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

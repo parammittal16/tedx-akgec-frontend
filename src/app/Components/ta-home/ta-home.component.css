@@ -1,0 +1,91 @@
+/* *{
+    margin: 0px !important;
+    padding: 0px !important; 
+} */
+.team {
+    background-image: linear-gradient(to top, #2b0c08 0%, #f94e30 100%);
+    padding-bottom: 80px;
+    
+}
+.cross {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 350px;
+}
+.cross2 {
+    
+    width: 100px;
+}
+.ratio {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 0;
+    padding-bottom: 100%;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+/* .img-circle {
+    
+} */
+.img-responsive {
+    display: block;
+    height: auto;
+    transition: .5s ease;
+    max-width: 100%;
+    -webkit-filter: grayscale(100%); 
+  filter: grayscale(100%);
+  border: 2px solid rgb(32, 1, 1);
+
+}
+.down {
+    position: relative;
+    bottom: -75px;
+}
+.text {
+    color: white;
+    font-size: 1.2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    margin-left: 15px;
+    margin-right: 15px;
+    background-color: rgba(0, 0, 0, 0.562);
+  }
+  
+  .cont-image:hover .overlay {
+    opacity: 1;
+  }
+  .cont-image:hover .img-responsive {
+    -webkit-filter: blur(3px) opacity(0.8);
+filter: blur(3px) opacity(0.8);
+}
+@media only screen and (max-width: 768px) {
+    .down {
+        position: relative;
+        bottom: 0;
+    }
+    .team {
+        padding-bottom: 0px;
+    }
+    .cross2 {
+        position: relative;
+        bottom: 50px;
+    }
+  }

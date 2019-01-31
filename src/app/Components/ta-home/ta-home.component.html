@@ -1,6 +1,29 @@
-<p>
+<!-- <p>
   ta-home works!
 </p>
 <button [routerLink]="['sponsors']">View Sponsors</button>
-<button [routerLink]="['admin']">Admin</button>
+<button [routerLink]="['admin']">Admin</button> -->
+<div class="team container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="cross">
+        <img src="../../../assets/x.svg" alt="">
+      </div>
+      | TEAM
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div *ngFor="let img of data?.results;let i = index" [class.down]="i%2 !== 0" class="cont-image col-md-2 col-lg-2 col-sm-6 col-6 my-3">
+        <div class="ratio img-responsive img-circle" [ngStyle]="{'background-image':'url('+img?.picture.large+')'}"></div>
+        <div class="overlay">
+            <div class="text">Name Full</div>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="cross2">
+      <img src="../../../assets/x.svg" alt="">
+    </div>
+</div>
 
