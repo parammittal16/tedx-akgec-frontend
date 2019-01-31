@@ -76,6 +76,41 @@
     -webkit-filter: blur(3px) opacity(0.8);
 filter: blur(3px) opacity(0.8);
 }
+/* Contact us */
+.contact-us {
+    background-image: url(../../../assets/map-akgec.jpg);
+    background-repeat: repeat-y;
+    background-size: cover;
+}
+.form-back-red {
+    background-color: #f94602bf;
+}
+.form-back-black {
+    background-color: rgba(0, 0, 0, 0.959);
+    color: #fff;
+}
+.invalid-feedback {
+    color: #f94602;
+}
+.sociallinks > a {
+    text-decoration: none;
+    color: #fff;
+}
+.fa {
+    margin: 1.5rem;
+}
+.btn-circle.btn-xl {
+    width: 70px;
+    height: 70px;
+    padding: 10px 16px;
+    border-radius: 35px;
+    font-size: 24px;
+    line-height: 1.33;
+}
+.foo {
+    color: #fff;
+    background-color: #000;
+}
 @media only screen and (max-width: 768px) {
     .down {
         position: relative;

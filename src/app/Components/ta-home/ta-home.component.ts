@@ -9,6 +9,7 @@ import { DataService } from 'src/app/Services/data.service';
 })
 export class TaHomeComponent implements OnInit {
   data: any;
+  model: any = {};
   constructor(private d: DataService) { }
   ngOnInit() {
     this.d.getData()
@@ -16,6 +17,9 @@ export class TaHomeComponent implements OnInit {
       this.data = res;
       console.log(this.data);
     }, err => console.log(err));
+  }
+  onSubmit() {
+    console.log(this.model);
   }
 
 }
