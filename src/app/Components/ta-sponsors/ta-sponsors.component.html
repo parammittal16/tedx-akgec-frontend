@@ -1,3 +1,20 @@
-<p>
-  ta-sponsors works!
-</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12 col-md-12">
+      <h1>
+        | OUR SPONSORS
+      </h1>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div *ngFor="let img of data?.results" class="col-sm-2 col-md-2 my-3">
+        <div class="ratio img-responsive img-circle" [ngStyle]="{'background-image':'url('+img?.picture.large+')'}"></div>
+      </div>
+    </div>
+    <div class="text-center mt-3">
+        <h3>A big thank to our Sponsors</h3>
+      </div>
+  </div>
+  <img class="spimg" src="../../../assets/images/sponsors-back.svg" alt="">
+</div>

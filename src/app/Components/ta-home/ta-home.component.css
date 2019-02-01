@@ -7,13 +7,13 @@
     padding-bottom: 80px;
     
 }
-.cross {
+.cross > img {
     position: absolute;
     right: 10px;
     top: 10px;
     width: 350px;
 }
-.cross2 {
+.cross2 > img{
     
     width: 100px;
 }
@@ -37,7 +37,7 @@
     max-width: 100%;
     -webkit-filter: grayscale(100%); 
   filter: grayscale(100%);
-  border: 2px solid rgb(32, 1, 1);
+  box-shadow: 0px 0px 1px 1px rgb(46, 7, 7);
 
 }
 .down {
@@ -78,7 +78,7 @@ filter: blur(3px) opacity(0.8);
 }
 /* Contact us */
 .contact-us {
-    background-image: url(../../../assets/map-akgec.jpg);
+    background-image: url(../../../assets/images/map-akgec.jpg);
     background-repeat: repeat-y;
     background-size: cover;
 }

@@ -1,0 +1,24 @@
+.ratio {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 0;
+    padding-bottom: 100%;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+/* .img-circle {
+    
+} */
+.img-responsive {
+    display: block;
+    height: auto;
+    transition: .5s ease;
+    max-width: 100%;
+}
+.spimg{
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+}

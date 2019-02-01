@@ -12,7 +12,7 @@ export class TaHomeComponent implements OnInit {
   model: any = {};
   constructor(private d: DataService) { }
   ngOnInit() {
-    this.d.getData()
+    this.d.getData(36)
     .subscribe(res => {
       this.data = res;
       console.log(this.data);
