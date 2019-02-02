@@ -9,6 +9,9 @@ import { Router } from '@angular/router';
 export class TaAdminDashboardComponent implements OnInit {
 imageUrl: string = "/assets/img/default.png";
 fileToUpload: File = null;
+sp = [0];
+t_team = [0];
+w_team = [0];
   constructor(private router: Router) { }
 
   ngOnInit() {
@@ -21,6 +24,18 @@ fileToUpload: File = null;
     reader.onload = (event: any) =>
     {this.imageUrl = event.target.result; }
     reader.readAsDataURL(this.fileToUpload);
+
+    
   }
+  add_sp() {
+    this.sp.push(this.sp.length);
+  }
+  add_t() {
+    this.t_team.push(this.t_team.length);
+  }
+  add_w() {
+    this.w_team.push(this.w_team.length);
+  }
+
 
 }
