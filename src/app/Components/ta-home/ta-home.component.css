@@ -3,18 +3,21 @@
     padding: 0px !important; 
 } */
 .team {
-    background-image: linear-gradient(to top, #2b0c08 0%, #f94e30 100%);
+    background-image: linear-gradient(to top, #ff6226 0%, #ff733b 100%);
     padding-bottom: 80px;
     
 }
 .cross > img {
     position: absolute;
-    right: 10px;
-    top: 10px;
+    right: -50px;
+    top: 20px;
     width: 350px;
 }
+.team {
+    overflow-x: hidden;
+}
 .cross2 > img{
-    
+
     width: 100px;
 }
 .ratio {
@@ -37,8 +40,7 @@
     max-width: 100%;
     -webkit-filter: grayscale(100%); 
   filter: grayscale(100%);
-  box-shadow: 0px 0px 1px 1px rgb(46, 7, 7);
-
+  
 }
 .down {
     position: relative;
@@ -68,7 +70,6 @@
     margin-right: 15px;
     background-color: rgba(0, 0, 0, 0.562);
   }
-  
   .cont-image:hover .overlay {
     opacity: 1;
   }
@@ -81,9 +82,15 @@ filter: blur(3px) opacity(0.8);
     background-image: url(../../../assets/images/map-akgec.jpg);
     background-repeat: repeat-y;
     background-size: cover;
+    background-attachment: fixed;
+  background-position: center;
+}
+.contactus-links-container {
+    text-align: center;
 }
 .form-back-red {
     background-color: #f94602bf;
+    padding: 30px;
 }
 .form-back-black {
     background-color: rgba(0, 0, 0, 0.959);
@@ -91,6 +98,9 @@ filter: blur(3px) opacity(0.8);
 }
 .invalid-feedback {
     color: #f94602;
+}
+.footerlinks {
+    text-align: right;
 }
 .sociallinks > a {
     text-decoration: none;
@@ -111,6 +121,22 @@ filter: blur(3px) opacity(0.8);
     color: #fff;
     background-color: #000;
 }
+.footerlogo {
+    width:40%; 
+    position: relative; 
+    bottom: -2px;
+}
+.form-control {
+    background-color: transparent;
+    color: #fff;
+}
+.form-control.is-invalid, .was-validated .form-control:invalid {
+    border-color: #f94602;
+}
+.formbut {
+    background-color: transparent;
+    border: 2px solid #fff;
+}
 @media only screen and (max-width: 768px) {
     .down {
         position: relative;
@@ -119,8 +145,25 @@ filter: blur(3px) opacity(0.8);
     .team {
         padding-bottom: 0px;
     }
+    .cross > img {
+        width: 150px;
+    }
     .cross2 {
         position: relative;
         bottom: 50px;
+        left: -50px;
+    }
+    .footerlogo {
+        width: 75%; 
+    }
+    .form-back-red {
+        padding: 12px;
+    }
+    .contactus-links-container {
+        text-align: left;
+        padding: 0;
+    }
+    .footerlinks {
+        text-align: center;
     }
   }

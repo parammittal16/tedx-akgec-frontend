@@ -33,7 +33,7 @@
           <h1>| CONTACT US</h1>
         </div>
       </div>
-      <div style="padding: 30px;" class="form-back-red container-fluid">
+      <div class="form-back-red container-fluid">
       <div class="container">
         <div style="padding: 40px;width:80%;"  class="row form-back-black mx-auto">
           <div class="col-lg-6 col-md-6 col-sm-12">
@@ -60,29 +60,30 @@
                         <div *ngIf="message.errors.required">Message is required</div>
                       </div>
                   </div>
-                <button [disabled]="!f.form.valid" class="btn btn-primary w-100">Submit</button>
+                <button [disabled]="!f.form.valid" class="btn btn-primary w-100 formbut">Submit</button>
             </form>             
           </div>
-          <div class="col-lg-6 col-md-6 col-sm-12 text-center my-auto">
+          <div class="contactus-links-container col-lg-6 col-md-6 col-sm-12 my-auto">
             <div class="sociallinks"><a href="" ><i class="fa fa-facebook" aria-hidden="true"></i>Facebook</a></div>
             <div class="sociallinks"><a href="" ><i class="fa fa-instagram" aria-hidden="true"></i>Instagram</a></div>
             <div class="sociallinks"><a href="" ><i class="fa fa-linkedin" aria-hidden="true"></i>LinkdeIn</a></div>
-            <div class="sociallinks"><a href="" ><i class="fa fa-location-arrow" aria-hidden="true"></i>Find us</a></div>
+            <div class="sociallinks"><a href="" ><i class="fa fa-location-arrow" aria-hidden="true"></i>Find-us</a></div>
           </div>
         </div>
       </div>
       </div>
-      <div class="text-center px-5 pt-5">
-        <img style="width:60%; position: relative; bottom: -2px" src="../../../assets/images/tedx-logo.svg" alt="logo">
+      <div class="text-center pt-5">
+        <img class="footerlogo" src="../../../assets/images/tedx-logo.svg" alt="logo">
       </div>
 </div>
-<footer class="foo footer pt-5">
+<footer class="foo footer md-pt-5">
     <div class="container">
       <div class="row p-3">
-        <div class="col-md-10 col-sm-12">
+        <div class="col-md-10 col-sm-12 my-3">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publ
         </div>
-        <div class="col-md-2 col-sm-12" style="text-align: right;">
+        <hr />
+        <div class="col-md-2 col-sm-12 footerlinks my-3">
             <div class="sociallinks"><a href="" >Facebook</a></div>
             <div class="sociallinks"><a href="" >Instagram</a></div>
             <div class="sociallinks"><a href="" >LinkdeIn</a></div>
@@ -90,6 +91,6 @@
         </div>
       </div>
     </div>
-    <div style="background-color: #202020" class="text-center p-2 mt-5">Copyright Tedx Akgec 2019</div>
+    <div style="background-color: #202020" class="text-center p-2 md-mt-5 sm-mt-1">&copy; Copyright Tedx Akgec 2019</div>
 </footer>
 

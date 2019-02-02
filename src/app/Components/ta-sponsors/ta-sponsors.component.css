@@ -21,4 +21,8 @@
     position: fixed;
     bottom: 0;
     width: 100vw;
+    z-index: -1;
+}
+.spcont {
+    z-index: 1;
 }
