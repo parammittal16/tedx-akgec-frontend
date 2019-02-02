@@ -1,0 +1,82 @@
+*{
+    color: #000;
+}
+.m-section{
+    background: radial-gradient(#f7f7f7,#d7d7d7);
+}
+
+.m-title{
+    font-size: 4em;
+    font-weight: 700;
+    margin:2em 0 1em 2em; ;
+}
+.m-button{
+font-size: 0.5em;
+border: 10px solid #000;
+padding: 10px;
+}
+
+.m-orange{
+    color: #ff2b06;
+}
+
+.m-element{
+    width:100px;
+    height: 10px;
+    background-color: #000;
+    color:#000;
+    font-size:20px;
+
+}
+.m-landing_img{
+    text-align: right;
+}
+.m-image{
+    height:100vh;
+}
+.m-counter{
+    position: absolute;
+    font-size: 2em;
+    font-weight: 600;
+    text-align: center;
+    top: 40%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    border: 10px solid #000;
+    padding: 1em;
+}
+.m-days{
+    font-size: 4em;
+}
+.heading-img{
+    height:4em;
+    margin:1em;
+}
+
+.m-tedSection{
+    background: linear-gradient(to bottom right, #fa4f31, #eb3c29);
+    padding:2em;
+}
+.m-tedxSection{
+    background: #000;
+    padding:2em;
+}
+.white-text{ 
+    color:white;
+}
+
+.about-content{
+    padding:2em;
+    text-align: center;
+    font-size: 1.15em;
+}
+
+.about-heading{
+    text-align: center;
+}
+
+.section-title{
+    font-size:4em;
+    font-weight: 700;
+    margin: 1em;
+}
