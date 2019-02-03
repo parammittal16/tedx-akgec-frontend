@@ -13,22 +13,22 @@
   <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home</a>
+        <a class="nav-link" (click)="scrollToElement(home)">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#aboutus">About us</a>
+        <a class="nav-link" (click)="scrollToElement(aboutus)">About us</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#speakers">Speakers</a>
+        <a class="nav-link" (click)="scrollToElement(speakers)">Speakers</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#sponsors">Sponsors</a>
+        <a class="nav-link" (click)="scrollToElement(sponsors)">Sponsors</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#team">Team</a>
+        <a class="nav-link" (click)="scrollToElement(team)">Team</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#contactus">Contact us</a>
+        <a class="nav-link" (click)="scrollToElement(contactus)">Contact us</a>
       </li>
     </ul>
     <!-- <form class="form-inline my-2 my-lg-0">
@@ -37,37 +37,43 @@
     </form> -->
   </div>
 </nav>
-<div class="m-section container-fuild">
+<div #home class="m-section container-fuild">
   <div class="row no-gutters">
     <div class="col-md-4">
       <div class="m-title">
-        WE <br/>
-       <span class="m-orange"> BELONG </span><br/>
-        TOGETHER <br/>
+        <div data-aos="fade-up" data-aos-duration="1000">WE</div>
+       <div data-aos="fade-up" data-aos-duration="2000" class="m-orange"> BELONG </div>
+        <div data-aos="fade-up" data-aos-duration="3000">TOGETHER</div>
+        <div data-aos="fade-up" data-aos-duration="4000">
         <span class="m-element">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br/>
         <a target="_blank" href="" class="m-button">Book Ticket</a>
+      </div>
       </div>
     </div>
     <div class="col-md-4 m-landing_img_mob d-md-none d-sm-block d-block">
       <img src="../../../assets/images/college-mobile.png" class="w-100 m-image">
     </div>
-    <div class="col-md-4 my-auto">
+    <div data-aos="zoom-in" data-aos-duration="3000" class="m-counter-cont col-md-4">
      <div class="m-counter">
         <span class="m-days">45</span><br/>
         <span>days left</span>
-     </div>
+        <img class="counter-dash1" src="../../../assets/images/dash.svg" alt="">
+        <img class="counter-dash2" src="../../../assets/images/dash.svg" alt="">
+        <img class="counter-plus1" src="../../../assets/images/plus2.svg" alt="">
+        <img class="counter-plus2" src="../../../assets/images/plus2.svg" alt="">
+      </div>
     </div>
-    <div style="height: 100vh" class="col-md-4 m-landing_img d-md-block d-sm-none d-none">
+    <div style="height: 100vh" class="col-md-4 m-landing_img d-md-block d-sm-none d-none" data-aos-duration="3000" data-aos="zoom-in-left">
       <img src="../../../assets/images/college_translucent.png" class="my-auto m-image">
     </div>
+    <img data-aos="fade-right" data-aos-duration="2000" src="../../../assets/images/landing-red-tri.svg" alt="" class="d-sm-none d-none d-md-block red-tri">
   </div>
-
 </div>
-<div id="aboutus" class="m-section container-fuild">
+<div #aboutus class="m-section container-fuild">
   <div class="row no-gutters">
     <div class="col-md-6">
-      <h1 class="section-title">| ABOUT US</h1>
-      <div class="tedx-akgec">
+      <h1 data-aos="fade-right" data-aos-duration="2000" class="section-title">| ABOUT US</h1>
+      <div  data-aos="fade-right" data-aos-duration="2000" class="tedx-akgec">
         <div class="about-heading"><img src="../../../assets/images/TEDx_AKGEC_Transparent.png" class="heading-img"></div>
         <div class="about-content">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
           Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
@@ -76,10 +82,13 @@
            with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
            desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
       </div>
+      <div class="cross0 d-sm-none d-none d-md-block">
+          <img src="../../../assets/images/red_x_poly.png" alt="">
+        </div>
     </div>
     <div class="col-md-6">
       <div class="row no-gutters">
-        <div class="col-12 m-tedSection">
+        <div  data-aos="fade-left" data-aos-duration="2000" class="col-12 m-tedSection">
           <div class="about-heading">
           <img src="../../../assets/images/TED_three_letter_logo.svg.png" class="heading-img">
         </div>
@@ -89,7 +98,7 @@
         have included Bill Gates, Jane Goodall, Elizabeth Gilbert, Sir Richard Branson, Nandan Nilekani, Philippe Starck, Ngozi Okonjo-Iweala,
         Sal Khan and Daniel Kahneman.</div>
         </div>
-        <div class="col-12 m-tedxSection">
+        <div  data-aos="fade-left" data-aos-duration="2000" class="col-12 m-tedxSection">
           <div class="about-heading">
             <img src="../../../assets/images/Main-Logo-Black.png" class="heading-img">
           </div>
@@ -105,14 +114,14 @@
         </div>
       </div>
      </div>
-     <div id="speakers" class="m-section container-fuild">
+     <div #speakers class="m-section container-fuild">
         <div class="row justify-content-center no-gutters">
           <div class="col-12">
-            <h1 class="section-title">| SPEAKERS</h1>
+            <h1 data-aos="fade-right" data-aos-duration="2000" class="section-title">| SPEAKERS</h1>
           </div>
           </div>
           <div class="container p-3">
-          <div class="row no-gutters">
+          <div  data-aos="fade-in" data-aos-duration="2000" class="row no-gutters">
               <div class="col-6 col-sm-6 col-md-2 speaker-card my-2">
                 <div class="img-back">
                   <img src="../../../assets/images/chico.png" class="speaker-img"  data-toggle="modal" data-target="#exampleModalCenter">
@@ -140,9 +149,12 @@
           <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
               <div class="container-fuild">
+                  <button type="button" class="close m-3" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
                 <div class="row no-gutters">
-                  <div class="col-5"><img src="../../../assets/images/chico.png" class="speaker-img-modal"></div>
-                  <div class="col-7 description">
+                  <div class="col-12 col-sm-12 col-md-5 p-4 speaker-img-modal-bg"><img src="../../../assets/images/chico.png" class="speaker-img-modal"></div>
+                  <div class="col-12 col-sm-12 col-md-7 p-4 description">
                     <h2>SPEAKER NAME</h2>
                     <h4>Post</h4>
                     <div class="speaker-desc">
@@ -159,25 +171,31 @@
           </div>
         </div>
      </div>
-<div id="sponsors" class="spon container-fluid">
+<div #sponsors class="spon container-fluid">
   <div class="row">
     <div style="margin-top: 80px;margin-bottom: 80px;" class="col-md-12 text-center ">
+      <div  data-aos="zoom-in" data-aos-duration="2000" style="display: inline-block; position: relative;">
         <a target="_blank" href="" class="sponbut">View Sponsors</a>
+        <img class="sponsor-dash1" src="../../../assets/images/dash-white.svg" alt="">
+        <img class="sponsor-dash2" src="../../../assets/images/dash-white.svg" alt="">
+        <img class="sponsor-plus1" src="../../../assets/images/plus2-white.svg" alt="">
+        <img class="sponsor-plus2" src="../../../assets/images/plus2-white.svg" alt="">
+      </div>
     </div>
   </div>
 </div>
-<div id="team" class="team container-fluid">
+<div #team class="team container-fluid">
   <div class="row">
     <div class="col-md-12">
       <div class="cross">
         <img src="../../../assets/images/X-animated.svg" alt="">
       </div>
-      <h1 class="section-title">| TEAM</h1>
+      <h1 data-aos="fade-right" data-aos-duration="2000" class="section-title text-white">| TEAM</h1>
     </div>
   </div>
   <div class="container">
     <div class="row">
-      <div *ngFor="let img of data?.results;let i = index" [class.down]="i%2 !== 0" class="cont-image col-md-2 col-lg-2 col-sm-6 col-6 my-3">
+      <div  data-aos="fade-in" data-aos-duration="2000" *ngFor="let img of data?.results;let i = index" [class.down]="i%2 !== 0" class="cont-image col-md-2 col-lg-2 col-sm-6 col-6 my-3">
         <div class="ratio img-responsive img-circle" [ngStyle]="{'background-image':'url('+img?.picture.large+')'}"></div>
         <div class="overlay">
             <div class="text">Name Full</div>
@@ -190,10 +208,10 @@
     </div>
 </div>
 <!-- Contact us -->
-<div id="contactus"  style="padding: 0; margin: 0;" class="contact-us container-fluid">
-    <div style="padding: 15px; margin: 0;" class="row">
-        <div class="col-md-12">
-          <h1 class="section-title">| CONTACT US</h1>
+<div #contactus style="padding: 0; margin: 0;" class="contact-us container-fluid">
+    <div style="padding: 0; margin: 0;" class="row">
+        <div data-aos="fade-right" data-aos-duration="2000" class="col-md-12">
+          <h1 class="section-title" style="font-size: 2.5rem;">| CONTACT US</h1>
         </div>
       </div>
       <div class="form-back-red container-fluid">
@@ -236,13 +254,13 @@
       </div>
       </div>
       <div class="text-center pt-5">
-        <img class="footerlogo" src="../../../assets/images/tedx-logo.svg" alt="logo">
+        <img  data-aos="fade-in-up" data-aos-duration="500" class="footerlogo" src="../../../assets/images/footer-logo.svg" alt="logo">
       </div>
 </div>
 <footer class="foo footer md-pt-5">
     <div class="container">
       <div class="row p-3">
-        <div class="col-md-10 col-sm-12 my-3">
+        <div class="footer-para col-md-10 col-sm-12 my-3">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publ
         </div>
         <hr />

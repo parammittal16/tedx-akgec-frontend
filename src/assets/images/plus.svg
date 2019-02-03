@@ -1,0 +1,8 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 265.28 225"><defs><style>.cls-1{fill:#000;-webkit-animation: rotation 2s infinite linear;animation: rotate 4s infinite linear;transform-origin: 50% 50%;}@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(359deg);
+    }
+}</style></defs><title>plus</title><polygon class="cls-1" points="203.47 82.64 203.47 142.36 162.5 142.36 162.5 183.33 102.77 183.33 102.77 142.36 61.8 142.36 61.8 82.64 102.77 82.64 102.77 41.66 162.5 41.66 162.5 82.64 203.47 82.64"/></svg>
