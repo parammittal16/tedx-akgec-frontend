@@ -1,20 +1,17 @@
 /* *{
     margin: 0px !important;
-    padding: 0px !important; 
+    padding: 0px !important;
 } */
 .team {
     background-image: linear-gradient(to top, #ff6226 0%, #ff733b 100%);
     padding-bottom: 80px;
-    
+    overflow-x: hidden;
 }
 .cross > img {
     position: absolute;
     right: -50px;
     top: 20px;
     width: 350px;
-}
-.team {
-    overflow-x: hidden;
 }
 .cross2 > img{
 
@@ -31,16 +28,16 @@
     width: 100%;
 }
 /* .img-circle {
-    
+
 } */
 .img-responsive {
     display: block;
     height: auto;
     transition: .5s ease;
     max-width: 100%;
-    -webkit-filter: grayscale(100%); 
+    -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
-  
+
 }
 .down {
     position: relative;
@@ -122,8 +119,8 @@ filter: blur(3px) opacity(0.8);
     background-color: #000;
 }
 .footerlogo {
-    width:40%; 
-    position: relative; 
+    width:40%;
+    position: relative;
     bottom: -2px;
 }
 .form-control {
@@ -154,7 +151,7 @@ filter: blur(3px) opacity(0.8);
         left: -50px;
     }
     .footerlogo {
-        width: 75%; 
+        width: 75%;
     }
     .form-back-red {
         padding: 12px;
@@ -167,3 +164,123 @@ filter: blur(3px) opacity(0.8);
         text-align: center;
     }
   }
+
+  /* meghna */
+.m-section{
+    background: radial-gradient(#f7f7f7,#d7d7d7);
+}
+
+.m-title{
+    font-size: 4em;
+    font-weight: 700;
+    margin:2em 0 1em 2em; ;
+}
+.m-button{
+font-size: 0.5em;
+border: 10px solid #000;
+padding: 10px;
+}
+
+.m-orange{
+    color: #ff2b06;
+}
+
+.m-element{
+    width:100px;
+    height: 10px;
+    background-color: #000;
+    color:#000;
+    font-size:20px;
+
+}
+.m-landing_img{
+    text-align: right;
+}
+.m-image{
+    height:100vh;
+}
+.m-counter{
+    position: absolute;
+    font-size: 2em;
+    font-weight: 600;
+    text-align: center;
+    top: 40%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    border: 10px solid #000;
+    padding: 1em;
+}
+.m-days{
+    font-size: 4em;
+}
+.heading-img{
+    height:4em;
+    margin:1em;
+}
+
+.m-tedSection{
+    background: linear-gradient(to bottom right, #fa4f31, #eb3c29);
+    padding:2em;
+}
+.m-tedxSection{
+    background: #000;
+    padding:2em;
+}
+.white-text{
+    color:white;
+}
+
+.about-content{
+    padding:2em;
+    text-align: center;
+    font-size: 1.15em;
+}
+
+.about-heading{
+    text-align: center;
+}
+
+.section-title{
+    font-size:4em;
+    font-weight: 700;
+    margin: 1em;
+}
+.speaker-img{
+    width:95%;
+    margin-top: -20%;
+}
+
+.img-back{
+    background-color: #ff2b06;
+    border-radius: 50%;
+}
+.speaker-card{
+    padding: 0.5em;
+    text-align: center;
+}
+.speaker-name{
+    font-size:1.25em;
+    font-weight: 700;
+}
+.speaker-post{
+    font-size:1em;
+}
+.speaker-img-modal{
+    width: 100%;
+    background: linear-gradient(to bottom right, #fa4f31, #eb3c29);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.description{
+    padding: 1em;
+}
+.speaker-desc{
+    margin-right:0.5em;
+}
+.modal-content{
+    border-radius:20px;
+}
+.ted-logo{
+    height: 2em;
+    margin:0.5em;
+}
