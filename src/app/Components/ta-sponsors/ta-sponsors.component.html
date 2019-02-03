@@ -8,11 +8,11 @@
   </div>
   <div class="spcont container">
     <div class="row justify-content-center">
-      <div *ngFor="let img of data?.results" class="col-sm-2 col-md-2 my-3">
+      <div *ngFor="let img of data?.results" class="col-6 col-sm-6 col-md-2 my-3">
         <div class="ratio img-responsive img-circle" [ngStyle]="{'background-image':'url('+img?.picture.large+')'}"></div>
       </div>
     </div>
-    <div class="text-center mt-3">
+    <div class="text-center my-3">
         <h3>A big thank to our Sponsors</h3>
       </div>
   </div>
