@@ -1,8 +1,47 @@
 
 <!-- <button [routerLink]="['sponsors']">View Sponsors</button>
 <button [routerLink]="['admin']">Admin</button> -->
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#"><img src="../../../assets/images/TEDx_AKGEC_Transparent.png" class="ted-logo"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      </li>
+    </ul>
+    <!-- <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form> -->
+  </div>
+</nav>
 <div class="m-section container-fuild">
-  <div class="row">
+  <div class="row no-gutters">
     <div class="col-md-4">
       <div class="m-title">
         WE <br/>
@@ -25,7 +64,7 @@
 
 </div>
 <div class="m-section container-fuild">
-  <div class="row">
+  <div class="row no-gutters">
     <div class="col-md-6">
       <h1 class="section-title">| ABOUT US</h1>
       <div class="tedx-akgec">
@@ -39,7 +78,7 @@
       </div>
     </div>
     <div class="col-md-6">
-      <div class="row">
+      <div class="row no-gutters">
         <div class="col-12 m-tedSection">
           <div class="about-heading">
           <img src="../../../assets/images/TED_three_letter_logo.svg.png" class="heading-img">
@@ -67,11 +106,42 @@
       </div>   
      </div>
      <div class="m-section container-fuild">
-        <div class="row">
+        <div class="row justify-content-center no-gutters">
           <div class="col-12">
             <h1 class="section-title">| SPEAKERS</h1>
           </div>
-          <div class="row">
+          <div class="col-10">
+          <div class="row no-gutters">
+              <div class="col-md-2 speaker-card">
+                <div class="img-back">
+                  <img src="../../../assets/images/chico.png" class="speaker-img"  data-toggle="modal" data-target="#exampleModalCenter">
+                </div>
+                <span class="speaker-name">First Last Name</span><br/>
+                <span class="speaker-post">Post</span>
+              </div>
+          </div>
+          </div>
+        </div>
+        <div class="modal fade bd-example-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+              <div class="container-fuild">
+                <div class="row no-gutters">
+                  <div class="col-5"><img src="../../../assets/images/chico.png" class="speaker-img-modal"></div>
+                  <div class="col-7 description">
+                    <h2>SPEAKER NAME</h2>
+                    <h4>Post</h4>
+                    <div class="speaker-desc">
+                       Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
+                      dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                      It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                      I was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
+                      desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
      </div>

@@ -80,3 +80,42 @@ padding: 10px;
     font-weight: 700;
     margin: 1em;
 }
+.speaker-img{
+    width:95%;
+    margin-top: -20%;
+}
+
+.img-back{
+    background-color: #ff2b06;
+    border-radius: 50%;
+}
+.speaker-card{
+    padding: 0.5em;
+    text-align: center;
+}
+.speaker-name{
+    font-size:1.25em;
+    font-weight: 700;
+}
+.speaker-post{
+    font-size:1em;
+}
+.speaker-img-modal{
+    width: 100%;
+    background: linear-gradient(to bottom right, #fa4f31, #eb3c29);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.description{
+    padding: 1em;
+}
+.speaker-desc{
+    margin-right:0.5em;
+}
+.modal-content{
+    border-radius:20px;
+}
+.ted-logo{
+    height: 2em;
+    margin:0.5em;
+}
