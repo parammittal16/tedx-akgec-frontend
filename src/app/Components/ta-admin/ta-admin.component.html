@@ -1,3 +1,4 @@
+<div *ngIf="!check()" >
 <div class="card bg-light mb-3 center text-center" style="max-width: 50rem;">
   <h3 class="card-header ">Admin Login</h3>
   <div class="card-body">
@@ -16,13 +17,16 @@
       </div>
       <div class="form-group row ">
         <div class="col">
-          <button type="submit" class="btn btn-lg btn-primary">Login</button>
+          <button type="submit"  class="btn btn-lg btn-primary" [routerLink]="['/admin','about']">Login</button>
         </div>
       </div>
     </form>
   </div>
 </div>
+</div>
 
+<div *ngIf="check()" >
 
   <app-ta-admin-dashboard> </app-ta-admin-dashboard>
 
+</div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthServerService } from 'src/app/Services/auth-server.service';
+import { AdminService } from 'src/app/Services/admin.service';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -8,22 +9,37 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./ta-admin.component.css']
 })
 export class TaAdminComponent implements OnInit {
-  model: any = {};
   data: any;
-  constructor(private ass: AuthServerService ) { }
+  error: any;
+  adminLoggedIn = false;
+  constructor(private ass: AuthServerService,private admins: AdminService ) { }
 
   ngOnInit() {
   }
+  check(){
+    return this.admins.adminLoggedIn()
+  }
+
   
   onLogin(form: NgForm){
     this.ass.adminLogin(form.value).subscribe(
-     (data: any) => {
-       localStorage.setItem('adminToken',data.access_token);
-     }
-    )
-        
-    
+      res => {
+        this.data = res;
+        if (this.data.token) {
+          this.admins.setAdmintoken(this.data.token);
+          this.adminLoggedIn = this.admins.adminLoggedIn();
+          console.log(this.adminLoggedIn);
+        }
+        form.resetForm();
+      },
+      err => {
+        this.error = err;
+      },
 
-    }
+    );
+        
+  }
+
+  
   }
 

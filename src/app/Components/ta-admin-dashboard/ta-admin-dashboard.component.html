@@ -11,6 +11,9 @@
       <li class="nav-item">
         <a class="nav-link" routerLinkActive="active" [routerLink]="['/admin','team']" >Team</a>
       </li>
+      <li class="nav-item pull-right">
+        <button type="button" class="btn btn-primary" (click)="OnLogOut()" >Log Out</button>      
+      </li>
     </ul>
   </div>
 
@@ -53,16 +56,17 @@
 
   <div class="card-body" *ngIf="router.url === '/admin/speakers'" >
     
-    <h3 class="card-title" style="margin-bottom: 30px;">Speakers</h3>
 
     <form (ngSubmit)="onLogin(f)" #f=ngForm>
 
-      <div *ngFor="let container of sp">
+      <div *ngFor="let container of sp; let k = index">
+      
+      <h3 class="card-title" style="margin-bottom: 30px;">Speaker {{ k+1 }} :</h3>
 
       <div class="form-group row" >
         <label for="s_name" class="col-sm-2 col-form-label">Name :</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="s_name" placeholder="Speaker's Name" name="s_name" required ngModel>
+          <input type="text" class="form-control" id="s_name" placeholder="Speaker's Name" name="{{'s_name'+k}}" required ngModel>
         </div>
       </div>
 
@@ -77,14 +81,14 @@
       <div class="form-group row">
           <label for="s_post" class="col-sm-2 col-form-label">Post :</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="s_post" placeholder="Speaker's Post" name="s_post" required ngModel>
+            <input type="text" class="form-control" id="s_post" placeholder="Speaker's Post" name="{{'s_post'+k}}" required ngModel>
           </div>
       </div>
 
       <div class="form-group row ">
           <label for="s_desc" class="col-sm-2 col-form-label">Description :</label>
           <div class="col-sm-10">
-            <textarea type="text" rows='3' class="form-control" id="s_desc" placeholder="Speaker's Description" name="s_desc" required ngModel></textarea>
+            <textarea type="text" rows='3' class="form-control" id="s_desc" placeholder="Speaker's Description" name="{{'s_desc'+k}}" required ngModel></textarea>
           </div>
       </div>
       
@@ -95,7 +99,7 @@
 
       <div class="form-group row btn-group mr-2 text-center">
         <div style="margin-right: 1rem">
-          <button type="button" class="btn btn-secondary" (click)="add_sp()">Add more Speakers</button>
+          <button type="button" class="btn btn-secondary" (click)="add('s')">Add more Speakers</button>
         </div>
         <div>
           <button type="submit" class="btn btn-primary">Update</button>
@@ -110,14 +114,14 @@
 
     <form (ngSubmit)="onLogin(f)" #f=ngForm>
 
-      <div *ngFor="let container of t_team">
+      <div *ngFor="let container of t_team; let i = index">
 
-      <h3 class="card-title" style="margin-bottom: 30px;">Tedx Team: </h3>
+      <h3 class="card-title" style="margin-bottom: 30px;">Tedx Team Member {{ i + 1}}: </h3>
     
       <div class="form-group row">
         <label for="tt_name" class="col-sm-2 col-form-label">Name :</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="tt_name" placeholder="Tedx Member's Name" name="tt_name" required ngModel>
+          <input type="text" class="form-control" id="tt_name" placeholder="Tedx Member's Name" name="{{'tt_name'+i}}" required ngModel>
         </div>
       </div>
 
@@ -132,21 +136,22 @@
       <div class="form-group row">
         <label for="tt_desg" class="col-sm-2 col-form-label">Designation :</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="tt_desg" placeholder="Tedx Member's designation" name="tt_desg" required ngModel>
+          <input type="text" class="form-control" id="tt_desg" placeholder="Tedx Member's designation" name="{{'tt_desg'+i}}" required ngModel>
         </div>
       </div>
       
       <hr>      
       </div>
+      <hr>
 
-      <div *ngFor="let container of w_team">
+      <div *ngFor="let container of w_team; let j = index">
 
-      <h3 class="card-title" style="margin-bottom: 30px;">Web Team: </h3>
+      <h3 class="card-title" style="margin-bottom: 30px;">Web Team Member {{ j + 1 }}: </h3>
 
       <div class="form-group row">
         <label for="wt_name" class="col-sm-2 col-form-label">Name :</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="wt_name" placeholder="Web Member's Name" name="wt_name" required ngModel>
+          <input type="text" class="form-control" id="wt_name" placeholder="Web Member's Name" name="{{'wt_name'+j}}" required ngModel>
         </div>
       </div>
 
@@ -161,21 +166,20 @@
       <div class="form-group row">
         <label for="wt_desg" class="col-sm-2 col-form-label">Designation :</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="wt_desg" placeholder="Web Member's designation" name="wt_desg" required ngModel>
+          <input type="text" class="form-control" id="wt_desg" placeholder="Web Member's designation" name="{{'wt_name'+j}}" required ngModel>
         </div>
       </div>
 
       <hr>
 
       </div>
-      
-      
+
         <div class="form-group row btn-group mr-2 text-center" style="margin-top: 20px">
-          <div style="margin-left: 4rem">
-            <button type="button" class="btn btn-secondary" (click)="add_t()">Add more Tedx Member</button>
+          <div style="margin-left: 3rem">
+            <button type="button" class="btn btn-secondary" (click)="add('t')">Add more Tedx Member</button>
           </div>
           <div style="margin-left: 1rem">
-            <button type="button" class="btn btn-secondary" (click)="add_w()">Add more Web Member</button>
+            <button type="button" class="btn btn-secondary" (click)="add('w')">Add more Web Member</button>
           </div>
           <div style="margin-left: 1rem">
             <button type="submit" class="btn btn-primary">Update</button>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AdminService } from 'src/app/Services/admin.service';
 
 @Component({
   selector: 'app-ta-admin-dashboard',
@@ -7,12 +8,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./ta-admin-dashboard.component.css']
 })
 export class TaAdminDashboardComponent implements OnInit {
-imageUrl: string = "/assets/img/default.png";
+
+imageUrl: string = "/assets/images/default.png";
 fileToUpload: File = null;
 sp = [0];
 t_team = [0];
 w_team = [0];
-  constructor(private router: Router) { }
+adminLoggedIn: boolean;
+  constructor(private router: Router, private admins: AdminService) { }
 
   ngOnInit() {
   }
@@ -22,20 +25,28 @@ w_team = [0];
 
     var reader = new FileReader();
     reader.onload = (event: any) =>
-    {this.imageUrl = event.target.result; }
+    {
+      this.imageUrl = event.target.result; 
+    }
     reader.readAsDataURL(this.fileToUpload);
-
+    console.log(this.fileToUpload)
     
   }
-  add_sp() {
-    this.sp.push(this.sp.length);
-  }
-  add_t() {
-    this.t_team.push(this.t_team.length);
-  }
-  add_w() {
-    this.w_team.push(this.w_team.length);
+
+  add(x: any){
+    if  (x=='s'){
+      this.sp.push(this.sp.length);
+    }
+    else if(x=='t'){
+      this.t_team.push(this.t_team.length);
+    }
+    else if(x=='w'){
+      this.w_team.push(this.w_team.length);
+    }
   }
 
+  OnLogOut(){
+    this.admins.removeAdminToken();
+  }
 
 }

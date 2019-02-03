@@ -5,12 +5,14 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AuthServerService {
-  readonly rootUrl = 'http://tedx-akgec.herokuapp.com/';
+  readonly rootUrl = 'https://tedx-akgec.herokuapp.com/';
   constructor(private http: HttpClient) { }
 
 
-adminLogin(body){
-  return this.http.post(this.rootUrl, body );
+adminLogin(body : any){
+  return this.http.post(this.rootUrl + 'api/admin-login', body );
 }
+
+
  
 }
