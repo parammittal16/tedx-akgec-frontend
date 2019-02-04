@@ -21,9 +21,14 @@ export class TaHomeComponent implements OnInit {
       console.log(this.data);
     }, err => console.log(err));
   }
-  scrollToElement($element): void {
+  scrollToElement($element, divId): void {
     console.log($element);
     $element.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
+    const els = document.getElementsByClassName('nav-item');
+    for (let i = 0; i < els.length; i++) {
+      els[i].classList.remove('is-active');
+    }
+    document.getElementById(divId).classList.add('is-active');
   }
   onSubmit() {
     console.log(this.model);
