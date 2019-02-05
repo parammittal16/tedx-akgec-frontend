@@ -153,7 +153,7 @@
                   <span aria-hidden="true">&times;</span>
                 </button>
                 <div class="row no-gutters">
-                  <div class="col-12 col-sm-12 col-md-5 p-4 speaker-img-modal-bg"><img src="../../../assets/images/chico.png" class="speaker-img-modal"></div>
+                  <div class="col-12 col-sm-12 col-md-5 p-4 speaker-img-modal-bg"><img [defaultImage]="defaultImage" [lazyLoad]="defaultImage" [offset]="offset" class="speaker-img-modal"></div>
                   <div class="col-12 col-sm-12 col-md-7 p-4 description">
                     <h2>SPEAKER NAME</h2>
                     <h4>Post</h4>
@@ -196,7 +196,8 @@
         <div class="container">
           <div class="row">
             <div  data-aos="fade-in" data-aos-duration="2000" *ngFor="let img of data?.results;let i = index" [class.down]="i%2 !== 0" class="cont-image col-md-2 col-lg-2 col-sm-6 col-6 my-3">
-              <div class="ratio img-responsive img-circle" [ngStyle]="{'background-image':'url('+img?.picture.large+')'}"></div>
+              <!-- <div class="ratio img-responsive img-circle" [ngStyle]="{'background-image':'url('+img?.picture.large+')'}"></div> -->
+              <div class="ratio img-responsive img-circle" [defaultImage]="defaultImage" [lazyLoad]="img?.picture?.large" [offset]="offset"></div>
               <div class="overlay">
                 <div class="text">Name Full</div>
               </div>
@@ -241,6 +242,10 @@
                       <div *ngIf="message.errors.required">Message is required</div>
                     </div>
                   </div>
+                  <div class="form-group" class="g-recaptcha mb-md-2">
+                      <re-captcha [(ngModel)]="model.response" name="response" required siteKey="6LeRVI8UAAAAAET7d1cbpLV0RJffJPc6ImWF4nf5" #response="ngModel"></re-captcha>
+                    </div>
+                    <div [hidden]="response.valid || response.pristine" class="error invalid-feedback">Captcha must be solved</div>
                   <button [disabled]="!f.form.valid" class="btn btn-primary w-100 formbut">Submit</button>
                 </form>
               </div>
