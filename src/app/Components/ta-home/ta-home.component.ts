@@ -14,6 +14,7 @@ export class TaHomeComponent implements OnInit {
   defaultImage = 'https://www.placecage.com/1000/1000';
   imgURL = 'https://tedx-akgec.herokuapp.com/api/uploads/';
   offset = 100;
+  spDetIndex = 0;
   data: any;
   model: any = {};
   constructor(private d: DataService, private http: HttpClient) { }
@@ -46,8 +47,17 @@ export class TaHomeComponent implements OnInit {
   onSubmit() {
     this.http.post('http://tedx-akgec.herokuapp.com/api/send-mail', this.model).subscribe(res => console.log(res));
   }
-  getSpeakerURL(index) {
-    console.log(index);
-    return `https://tedx-akgec.herokuapp.com/api/uploads/${this.data.data.speakers[index].imgurl}`;
+  speakerDetailIndex(ind) {
+    this.spDetIndex = ind;
+  }
+  getSpeakerURL(ind) {
+    if (this.data) {
+    return `https://tedx-akgec.herokuapp.com/api/uploads/${this.data.data.speakers[ind].imgurl}`;
+    }
+  }
+  getTeamURL(ind) {
+    if (this.data) {
+    return `https://tedx-akgec.herokuapp.com/api/uploads/${this.data.data.team[ind].imgurl}`;
+    }
   }
 }

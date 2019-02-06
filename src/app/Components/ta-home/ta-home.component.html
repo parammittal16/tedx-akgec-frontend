@@ -108,26 +108,12 @@
         </div>
         <div class="container p-3">
           <div  data-aos="fade-in" data-aos-duration="2000" class="row no-gutters">
-            <div class="col-6 col-sm-6 col-md-2 speaker-card my-2">
+            <div class="col-6 col-sm-6 col-md-2 speaker-card my-2" *ngFor="let item of data?.data?.speakers;let i = index;">
               <div class="img-back">
-                <img src="../../../assets/images/chico.png" class="speaker-img"  data-toggle="modal" data-target="#exampleModalCenter">
+                <img [defaultImage]="defaultImage" [lazyLoad]="getSpeakerURL(i)" [offset]="offset" class="speaker-img" (click)="speakerDetailIndex(i)" data-toggle="modal" data-target="#exampleModalCenter">
               </div>
-              <span class="speaker-name">First Last Name</span><br/>
-              <span class="speaker-post">Post</span>
-            </div>
-            <div class="col-6 col-sm-6 col-md-2 speaker-card my-2">
-              <div class="img-back">
-                <img src="../../../assets/images/chico.png" class="speaker-img"  data-toggle="modal" data-target="#exampleModalCenter">
-              </div>
-              <span class="speaker-name">First Last Name</span><br/>
-              <span class="speaker-post">Post</span>
-            </div>
-            <div class="col-6 col-sm-6 col-md-2 speaker-card my-2">
-              <div class="img-back">
-                <img src="../../../assets/images/chico.png" class="speaker-img"  data-toggle="modal" data-target="#exampleModalCenter">
-              </div>
-              <span class="speaker-name">First Last Name</span><br/>
-              <span class="speaker-post">Post</span>
+              <span class="speaker-name">{{data?.data?.speakers[i]?.name}}</span><br/>
+              <span class="speaker-post">{{data?.data?.speakers[i]?.designation}}</span>
             </div>
           </div>
         </div>
@@ -139,16 +125,12 @@
                   <span aria-hidden="true">&times;</span>
                 </button>
                 <div class="row no-gutters">
-                  <div class="col-12 col-sm-12 col-md-5 p-4 speaker-img-modal-bg"><img [defaultImage]="defaultImage" [lazyLoad]="defaultImage" [offset]="offset" class="speaker-img-modal"></div>
+                  <div class="col-12 col-sm-12 col-md-5 p-4 speaker-img-modal-bg"><img src="https://tedx-akgec.herokuapp.com/api/uploads/{{data?.data?.speakers[spDetIndex].imgurl}}" class="speaker-img-modal"></div>
                   <div class="col-12 col-sm-12 col-md-7 p-4 description">
-                    <h2>SPEAKER NAME</h2>
-                    <h4>Post</h4>
+                    <h2>{{data?.data?.speakers[spDetIndex]?.name}}</h2>
+                    <h4>{{data?.data?.speakers[spDetIndex]?.designation}}</h4>
                     <div class="speaker-desc">
-                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
-                      dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                      It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                      I was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
-                      desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                      {{data?.data?.speakers[spDetIndex]?.description}}
                     </div>
                   </div>
                 </div>
@@ -183,9 +165,9 @@
           <div class="row">
             <div  data-aos="fade-in" data-aos-duration="2000" *ngFor="let img of data?.data?.team;let i = index" [class.down]="i%2 !== 0" class="cont-image col-md-2 col-lg-2 col-sm-6 col-6 my-3">
               <!-- <div class="ratio img-responsive img-circle" [ngStyle]="{'background-image':'url('+img?.picture.large+')'}"></div> -->
-              <div class="ratio img-responsive img-circle" [defaultImage]="defaultImage" [lazyLoad]="getSpeakerURL(i)" [offset]="offset"></div>
+              <div class="ratio img-responsive img-circle" [defaultImage]="defaultImage" [lazyLoad]="getTeamURL(i)" [offset]="offset"></div>
               <div class="overlay">
-                <div class="text">{{data?.data?.speakers[i]?.name}}<br /><br />{{data?.data?.speakers[i]?.designation}}</div>
+                <div class="text">{{data?.data?.team[i]?.name}}<br /><br />{{data?.data?.team[i]?.designation}}</div>
               </div>
             </div>
           </div>
@@ -252,14 +234,16 @@
         <div class="container">
           <div class="row p-3">
             <div class="footer-para col-md-10 col-sm-12 my-3">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publ
+                {{data?.data?.aboutUs[0]?.footer}}
             </div>
             <hr />
             <div class="col-md-2 col-sm-12 footerlinks my-3">
-              <div class="sociallinks"><a href="" >Facebook</a></div>
-              <div class="sociallinks"><a href="" >Instagram</a></div>
-              <div class="sociallinks"><a href="" >LinkdeIn</a></div>
-              <div class="sociallinks"><a href="" >Find us</a></div>
+              <div class="sociallinks"><a (click)="scrollToElement(home, 'nav-home')">Home</a></div>
+              <div class="sociallinks"><a (click)="scrollToElement(aboutus, 'nav-aboutus')">About us</a></div>
+              <div class="sociallinks"><a (click)="scrollToElement(speakers, 'nav-speakers')">Speakers</a></div>
+              <div class="sociallinks"><a (click)="scrollToElement(sponsors, 'nav-sponsors')">Sponsors</a></div>
+              <div class="sociallinks"><a (click)="scrollToElement(team, 'nav-team')">Team</a></div>
+              <div class="sociallinks"><a (click)="scrollToElement(contactus, 'nav-contactus')">Contact us</a></div>
             </div>
           </div>
         </div>

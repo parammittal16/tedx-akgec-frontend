@@ -17,6 +17,7 @@ token: string;
 ted = '';
 tedx = '';
 tedx_akgec = '';
+footer = '';
 date: any;
 dateId: any;
 dateRoute: any;
@@ -41,6 +42,7 @@ details: any;
         this.tedx_akgec = this.data.data[0].tedx_akgec;
         this.tedx = this.data.data[0].tedx;
         this.ted = this.data.data[0].ted;
+        this.footer = this.data.data[0].footer;
       });
     }
     this.as.getDate(this.admins.getAdminToken())

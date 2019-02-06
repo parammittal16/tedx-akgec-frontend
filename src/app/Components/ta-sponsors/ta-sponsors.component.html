@@ -9,7 +9,7 @@
   <div class="spcont container">
     <div class="row justify-content-center">
       <div *ngFor="let img of data?.data; let i = index" class="col-6 col-sm-6 col-md-2 my-3">
-        <div class="ratio img-responsive img-circle" [ngStyle]="{'background-image':'url(getSponsorsURL(i))'}"></div>
+        <div class="ratio img-responsive img-circle" [defaultImage]="defaultImage" [lazyLoad]="getSponsorsURL(i)" [offset]="offset" ></div>
       </div>
     </div>
     <div class="text-center my-3">

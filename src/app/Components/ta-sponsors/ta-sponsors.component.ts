@@ -9,6 +9,8 @@ import { DataService } from 'src/app/Services/data.service';
 export class TaSponsorsComponent implements OnInit {
 
   data: any;
+  offset = 100;
+  defaultImage = 'https://www.placecage.com/1000/1000';
   constructor(private sp: DataService) { }
 
   ngOnInit() {
@@ -18,8 +20,9 @@ export class TaSponsorsComponent implements OnInit {
     }, err => console.log(err));
   }
   getSponsorsURL(index) {
+    console.log('Hi');
     console.log(`https://tedx-akgec.herokuapp.com/api/uploads/${this.data.data[index].imgurl}`);
     return `https://tedx-akgec.herokuapp.com/api/uploads/${this.data.data[index].imgurl}`;
   }
-
+// [ngStyle]="{'background-image':'url(getSponsorsURL(i))'}"
 }
