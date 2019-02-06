@@ -12,7 +12,10 @@ const appRoutes: Routes = [
     { path: 'speakers', component: TaHomeComponent },
     { path: 'team', component: TaHomeComponent },
     { path: 'date', component: TaHomeComponent },
-    { path: 'sponsors', component: TaHomeComponent }
+    { path: 'sponsors', component: TaHomeComponent },
+    { path: 'view-speakers', component: TaHomeComponent },
+    { path: 'view-team', component: TaHomeComponent },
+    { path: 'view-sponsors', component: TaHomeComponent }
    ]},
    { path: 'sponsors', component: TaSponsorsComponent},
    { path: '**', redirectTo: '/' }

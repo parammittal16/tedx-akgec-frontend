@@ -10,6 +10,9 @@ import { TaAdminDashboardComponent } from './Components/ta-admin-dashboard/ta-ad
 import { AppRoutingModule } from './app-routing.module';
 import { TaSponsorsComponent } from './Components/ta-sponsors/ta-sponsors.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ViewspeakersComponent } from './Components/ta-admin-dashboard/viewspeakers/viewspeakers.component';
+import { ViewsponsorsComponent } from './Components/ta-admin-dashboard/viewsponsors/viewsponsors.component';
+import { ViewteamComponent } from './Components/ta-admin-dashboard/viewteam/viewteam.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { HttpClientModule } from '@angular/common/http';
     TaHomeComponent,
     TaAdminComponent,
     TaAdminDashboardComponent,
-    TaSponsorsComponent
+    TaSponsorsComponent,
+    ViewspeakersComponent,
+    ViewsponsorsComponent,
+    ViewteamComponent
   ],
   imports: [
     BrowserModule,

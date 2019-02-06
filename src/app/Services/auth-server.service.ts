@@ -17,8 +17,42 @@ adminLogin(body : any){
   return this.http.post(this.rootUrl + 'api/admin-login', body, {headers: headers} );
 }
 
-
-
+postspeakers(data: any, token) {
+  const headers = new HttpHeaders({
+    'Authorization': 'Bearer ' + token
+   });
+  return this.http.post(this.rootUrl + 'api/create-speakers', data, {headers: headers});
+}
+postsponsors(data: any, token) {
+  const headers = new HttpHeaders({
+    'Authorization': 'Bearer ' + token
+   });
+  return this.http.post(this.rootUrl + 'api/create-sponsors', data, {headers: headers});
+}
+postteam(data: any, token) {
+  const headers = new HttpHeaders({
+    'Authorization': 'Bearer ' + token
+   });
+  return this.http.post(this.rootUrl + 'api/create-team', data, {headers: headers});
+}
+getspeakers(token) {
+  const headers = new HttpHeaders({
+    'Authorization': 'Bearer ' + token
+   });
+  return this.http.get(this.rootUrl + 'api/get-speakers', {headers: headers});
+}
+getsponsors(token) {
+  const headers = new HttpHeaders({
+    'Authorization': 'Bearer ' + token
+   });
+  return this.http.get(this.rootUrl + 'api/get-sponsors', {headers: headers});
+}
+getteam(token) {
+  const headers = new HttpHeaders({
+    'Authorization': 'Bearer ' + token
+   });
+  return this.http.get(this.rootUrl + 'api/get-team', {headers: headers});
+}
 // uploadImage(fileToUpload: File){
   
 //   const formData: any = new FormData();

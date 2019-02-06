@@ -18,13 +18,14 @@ tedx = '';
 tedx_akgec = '';
 date: any;
 imageUrl = '/assets/images/default.png';
-fileToUpload: Array<File> = [];
+fileToUpload_s: Array<File> = [];
+fileToUpload_p: Array<File> = [];
+fileToUpload_t: Array<File> = [];
 sp = [0];
 t_team = [0];
 w_team = [0];
 adminLoggedIn: boolean;
 details: any;
-
   constructor(private router: Router, private admins: AdminService, private as: AuthServerService, private http: HttpClient  ) { }
   ngOnInit() {
     this.token = this.admins.getAdminToken();
@@ -39,10 +40,14 @@ details: any;
       });
     }
   }
-
-  handleFileInput(fileInput : any){
-  this.fileToUpload.push(fileInput.target.files[0]);
-
+  handleFileInput_s(fileInput: any) {
+    this.fileToUpload_s.push(fileInput.target.files[0]);
+  }
+  handleFileInput_p(fileInput: any) {
+    this.fileToUpload_p.push(fileInput.target.files[0]);
+  }
+  handleFileInput_t(fileInput: any) {
+    this.fileToUpload_t.push(fileInput.target.files[0]);
   }
 
   add(x: any){
@@ -57,41 +62,43 @@ details: any;
     }
   }
 
-  OnLogOut(){
+  OnLogOut() {
     this.admins.removeAdminToken();
   }
-
-  
-
-  onSpeakers(){
-
+  onSpeakers(f) {
     const formData: any = new FormData();
-    const files: Array<File> = this.fileToUpload;
-
-    for(let i = 0; i < files.length; i++)
-    {
-      console.log('hi');
+    const files: Array<File> = this.fileToUpload_s;
+    for (let i = 0; i < files.length; i++) {
       formData.append('image', files[i]);
-      formData.append('name', files[i]);
-      formData.append('description', files[i]);
-      formData.append('designation', files[i]);
-
+      formData.append('name', f.value[`s_name${i}`]);
+      formData.append('description', f.value[`s_desc${i}`]);
+      formData.append('designation', f.value[`s_post${i}`]);
     }
-    console.log('form data variable:' + formData.toString());
-    
-    this.http.post('http://2bf19597.ngrok.io/' + 'api/admin-login',formData).subscribe(
-      fil => console.log('files', fil)
-    );
-    
+    this.as.postspeakers(formData, this.admins.getAdminToken())
+    .subscribe(res => console.log(res), err => console.log(err));
   }
-  onAbout(form: NgForm) {
-    this.token = this.admins.getAdminToken();
-    if (this.token) {
-      this.as.update_about(form.value, this.token).subscribe(
-        res => console.log(res)
-    );
+  onSponsors(f) {
+    const formData: any = new FormData();
+    const files: Array<File> = this.fileToUpload_p;
+    for (let i = 0; i < files.length; i++) {
+      formData.append('image', files[i]);
+    }
+    this.as.postsponsors(formData, this.admins.getAdminToken())
+    .subscribe(res => console.log(res), err => console.log(err));
   }
-}
+  onTeam(f) {
+    const formData: any = new FormData();
+    const files: Array<File> = this.fileToUpload_t;
+    for (let i = 0; i < files.length; i++) {
+      formData.append('image', files[i]);
+      formData.append('name', f.value[`tt_name${i}`]);
+      formData.append('designation', f.value[`tt_desg${i}`]);
+    }
+    this.as.postteam(formData, this.admins.getAdminToken())
+    .subscribe(res => console.log(res), err => console.log(err));
+  }
+
+
 onDate(form: NgForm) {
   const tok = this.admins.removeAdminToken();
     console.log(form.value);
