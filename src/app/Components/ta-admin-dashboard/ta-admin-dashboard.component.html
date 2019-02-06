@@ -1,3 +1,230 @@
-<p>
-  ta-admin-dashboard works!
-</p>
+<div class="text-center">
+
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/admin','date']" >Date</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/admin','about']">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/admin','speakers']">Add Speakers</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/admin','view-speakers']">View Speakers</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/admin','sponsors']" >Add Sponsors</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/admin','view-sponsors']" >View Sponsors</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/admin','team']" >Add Team</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/admin','view-team']" >View Team</a>
+      </li>
+      <li class="nav-item justify-content-end">
+        <button type="button" class="btn btn-primary" (click)="OnLogOut()" >Log Out</button>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card-body" *ngIf="router.url === '/admin/about'" >
+
+    <h3 class="card-title" style="margin-bottom: 30px;">About Us</h3>
+
+    <form (ngSubmit)="onAbout(a)" #a=ngForm>
+
+      <div class="form-group row">
+        <label for="about_ted" class="col-sm-2 col-form-label">About Ted :</label>
+        <div class="col-sm-10">
+          <textarea type="text" rows="3" class="form-control" id="about_ted" placeholder="About Ted" name="ted" required [(ngModel)]='ted'></textarea>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="about_tedx" class="col-sm-2 col-form-label">About Tedx :</label>
+        <div class="col-sm-10">
+          <textarea type="text" rows="3" class="form-control" id="about_tedx" placeholder="About Tedx" name="tedx" required [(ngModel)]='tedx'></textarea>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="about_tedx_akg" class="col-sm-2 col-form-label">About Tedx AKGEC :</label>
+        <div class="col-sm-10">
+          <textarea type="text" rows="3" class="form-control" id="about_tedx_akg" placeholder="About Tedx AKGEC" name="tedx_akgec" required [(ngModel)]='tedx_akgec'></textarea>
+        </div>
+      </div>
+
+      <div class="form-group row ">
+        <div class="col">
+          <button type="submit" class="btn btn-primary">Update</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+
+
+  <div class="card-body" *ngIf="router.url === '/admin/speakers'" >
+
+
+    <form (ngSubmit)="onSpeakers(s)" #s=ngForm>
+
+      <div *ngFor="let container of sp; let k = index">
+
+        <h3 class="card-title" style="margin-bottom: 30px;">Speaker {{ k+1 }} :</h3>
+
+        <div class="form-group row" >
+          <label for="s_name" class="col-sm-2 col-form-label">Name :</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="s_name" placeholder="Speaker's Name" name="{{'s_name'+k}}" required ngModel>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="s_img" class="col-sm-2 col-form-label">Image :</label>
+          <div class="col-sm-10">
+            <img [src]='imageUrl' style="width: 5rem; height : 5rem; margin-right: 3%; margin-bottom: 2px;">
+            <input type="file" #Image accept="image/*" (change)="handleFileInput_s($event, k)">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="s_post" class="col-sm-2 col-form-label">Post :</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="s_post" placeholder="Speaker's Post" name="{{'s_post'+k}}" required ngModel>
+          </div>
+        </div>
+
+        <div class="form-group row ">
+          <label for="s_desc" class="col-sm-2 col-form-label">Description :</label>
+          <div class="col-sm-10">
+            <textarea type="text" rows='3' class="form-control" id="s_desc" placeholder="Speaker's Description" name="{{'s_desc'+k}}" required ngModel></textarea>
+          </div>
+        </div>
+        <hr>
+        <br>
+      </div>
+      <div class="form-group row btn-group mr-2 text-center">
+        <div style="margin-right: 1rem">
+          <button type="button" class="btn btn-secondary" (click)="add('s')">Add more Speakers</button>
+        </div>
+        <div>
+          <button type="submit" class="btn btn-primary">Add</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+
+
+  <div class="card-body" *ngIf="router.url === '/admin/team'" >
+
+    <form (ngSubmit)="onTeam(t)" #t=ngForm>
+
+      <div *ngFor="let container of t_team; let i = index">
+
+        <h3 class="card-title" style="margin-bottom: 30px;">Team Member {{ i + 1}}: </h3>
+
+        <div class="form-group row">
+          <label for="tt_name" class="col-sm-2 col-form-label">Name :</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="tt_name" placeholder="Member's Name" name="{{'tt_name'+i}}" required ngModel>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="tt_img" class="col-sm-2 col-form-label">Image :</label>
+          <div class="col-sm-10">
+            <img [src]='imageUrl' style="width: 5rem; height : 5rem; margin-right: 3%; margin-bottom: 20px;">
+            <input type="file" #image  accept="image/*" (change)="handleFileInput_t($event, i)">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="tt_desg" class="col-sm-2 col-form-label">Designation :</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="tt_desg" placeholder="Member's designation" name="{{'tt_desg'+i}}" required ngModel>
+          </div>
+        </div>
+
+        <hr>
+      </div>
+      <hr>
+
+
+      <div class="form-group row btn-group mr-2 text-center" style="margin-top: 20px">
+        <div style="margin-left: 3rem">
+          <button type="button" class="btn btn-secondary" (click)="add('t')">Add more Tedx Member</button>
+        </div>
+        <div style="margin-left: 1rem">
+          <button type="submit" class="btn btn-primary">Add</button>
+        </div>
+      </div>
+
+    </form>
+
+  </div>
+  <div class="card-body" *ngIf="router.url === '/admin/sponsors'" >
+
+    <form (ngSubmit)="onSponsors(a)" #a=ngForm>
+      <div *ngFor="let container of w_team; let i = index">
+        <h3 class="card-title" style="margin-bottom: 30px;">Sponsors {{i+1}}</h3>
+
+        <div class="form-group row">
+          <label for="p_img" class="col-sm-2 col-form-label">Image :</label>
+          <div class="col-sm-10">
+            <img [src]='imageUrl' style="width: 5rem; height : 5rem; margin-right: 3%; margin-bottom: 20px;">
+            <input type="file" #image  accept="image/*" (change)="handleFileInput_p($event, i)">
+          </div>
+        </div>
+        </div>
+        <div class="form-group row btn-group mr-2 text-center" style="margin-top: 20px">
+          <div style="margin-left: 3rem">
+            <button type="button" class="btn btn-secondary" (click)="add('p')">Add more Sponsors</button>
+          </div>
+          <div style="margin-left: 1rem">
+            <button type="submit" class="btn btn-primary">Add</button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+    <div class="card-body" *ngIf="router.url === '/admin/date'" >
+
+      <h3 class="card-title" style="margin-bottom: 30px;">Event Date</h3>
+
+      <form (ngSubmit)="onDate(dateForm)" #dateForm=ngForm>
+          <div class="form-group row">
+            <div class="col">
+            Days Left : {{daysLeft}}
+            </div>
+          </div>
+        <div class="form-group row">
+          <label for="about_ted" class="col-sm-2 col-form-label">Select:</label>
+          <div class="col-sm-10">
+            <input type="date" class="form-control" name="date" required [(ngModel)]='date'>
+          </div>
+        </div>
+        <div class="form-group row ">
+          <div class="col">
+            <button type="submit" class="btn btn-primary">{{dateButton}}</button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+    <div class="card-body" *ngIf="router.url === '/admin/view-sponsors'" >
+      <app-viewsponsors></app-viewsponsors>
+    </div>
+    <div class="card-body" *ngIf="router.url === '/admin/view-speakers'" >
+      <app-viewspeakers></app-viewspeakers>
+    </div>
+    <div class="card-body" *ngIf="router.url === '/admin/view-team'" >
+      <app-viewteam></app-viewteam>
+    </div>
+  </div>

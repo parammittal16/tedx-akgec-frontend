@@ -1,0 +1,25 @@
+<table class="table stripped">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Designantion</th>
+        <th scope="col">description</th>
+        <th scope="col">Image</th>
+        <!-- <th scope="col">Edit</th> -->
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let r of data?.data;let i = index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{r?.name}}</td>
+        <td>{{r.designation}}</td>
+        <td>{{r.description}}</td>
+        <td><a href="https://tedx-akgec.herokuapp.com/api/uploads/{{r.imgurl}}">Image</a></td>
+        <!-- <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="item_open(r.id)">Edit</button></td> -->
+        <td><button class="btn btn-danger" (click)="delete_s(r?.id)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+    <!-- Modal -->
