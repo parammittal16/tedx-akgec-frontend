@@ -3,25 +3,25 @@
 @import "~font-awesome/css/font-awesome.css";
 
 * {
-  font-family: 'Heebo', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 ::-webkit-scrollbar {
     width: 8px;
   }
-  
+
   /* Track */
   ::-webkit-scrollbar-track {
-    background: #f1f1f1; 
+    background: #f1f1f1;
   }
-  
+
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: rgb(85, 85, 85); 
+    background: rgb(85, 85, 85);
   }
-  
+
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: rgb(43, 43, 43); 
+    background: rgb(43, 43, 43);
   }
   .loading_image{
     position: absolute;
