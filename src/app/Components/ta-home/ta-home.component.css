@@ -15,7 +15,7 @@
     position: absolute;
     left: -50px;
     bottom: 30px;
-    width: 400px;
+    width: 250px;
   }
 .cross > img {
   position: absolute;
@@ -28,7 +28,7 @@
   width: 100px;
 }
 .tedx-akgec {
-    margin-top: 25%;
+    margin-top: 5%;
 }
 .cross2 {
     position: relative;
@@ -36,7 +36,7 @@
 }
 .nav-link {
   font-size: 1.2rem;
-  font-weight: 600;
+  font-weight: 200;
 }
 .navbar {
   background-color: #f3f3f3d0;
@@ -324,9 +324,8 @@
 }
 
 .about-content{
-  padding:2em;
   text-align: center;
-  font-size: 1.15em;
+  font-size: 1em;
 }
 
 .about-heading{
@@ -454,4 +453,7 @@
   .section-title{
     font-size:2.5rem;
   }
+}
+h1.about-heading{
+    font-weight: 800;
 }

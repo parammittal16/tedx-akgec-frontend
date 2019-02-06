@@ -3,7 +3,7 @@
 @import "~font-awesome/css/font-awesome.css";
 
 * {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Heebo', sans-serif;
 }
 ::-webkit-scrollbar {
     width: 8px;
