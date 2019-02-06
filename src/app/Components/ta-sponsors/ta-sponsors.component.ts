@@ -12,10 +12,14 @@ export class TaSponsorsComponent implements OnInit {
   constructor(private sp: DataService) { }
 
   ngOnInit() {
-    this.sp.getData(10).subscribe(res => {
+    this.sp.getSponsors().subscribe(res => {
       this.data = res;
       console.log(this.data);
     }, err => console.log(err));
+  }
+  getSponsorsURL(index) {
+    console.log(`https://tedx-akgec.herokuapp.com/api/uploads/${this.data.data[index].imgurl}`);
+    return `https://tedx-akgec.herokuapp.com/api/uploads/${this.data.data[index].imgurl}`;
   }
 
 }

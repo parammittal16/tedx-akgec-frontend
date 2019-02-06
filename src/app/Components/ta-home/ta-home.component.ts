@@ -12,13 +12,14 @@ import { HttpClient } from '@angular/common/http';
 })
 export class TaHomeComponent implements OnInit {
   defaultImage = 'https://www.placecage.com/1000/1000';
+  imgURL = 'https://tedx-akgec.herokuapp.com/api/uploads/';
   offset = 100;
   data: any;
   model: any = {};
   constructor(private d: DataService, private http: HttpClient) { }
   ngOnInit() {
     AOS.init();
-    this.d.getData(36)
+    this.d.getData()
     .subscribe(res => {
       this.data = res;
       console.log(this.data);
@@ -44,5 +45,9 @@ export class TaHomeComponent implements OnInit {
   }
   onSubmit() {
     this.http.post('http://tedx-akgec.herokuapp.com/api/send-mail', this.model).subscribe(res => console.log(res));
+  }
+  getSpeakerURL(index) {
+    console.log(index);
+    return `https://tedx-akgec.herokuapp.com/api/uploads/${this.data.data.speakers[index].imgurl}`;
   }
 }
