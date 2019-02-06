@@ -11,12 +11,13 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./ta-admin-dashboard.component.css']
 })
 export class TaAdminDashboardComponent implements OnInit {
-data : any;
-token : string;
-ted: string = ''
-tedx: string = ''
-tedx_akgec: string = ''
-imageUrl: String = "/assets/images/default.png";
+data: any;
+token: string;
+ted = '';
+tedx = '';
+tedx_akgec = '';
+date: any;
+imageUrl = '/assets/images/default.png';
 fileToUpload: Array<File> = [];
 sp = [0];
 t_team = [0];
@@ -25,24 +26,19 @@ adminLoggedIn: boolean;
 details: any;
 
   constructor(private router: Router, private admins: AdminService, private as: AuthServerService, private http: HttpClient  ) { }
-
-  
-
   ngOnInit() {
     this.token = this.admins.getAdminToken();
+    if (this.token) {
     this.as.get_about(this.token).subscribe(
       res => {
-        console.log(typeof(res));
+        console.log(res);
         this.data = res;
-
         this.tedx_akgec = this.data.data[0].tedx_akgec;
         this.tedx = this.data.data[0].tedx;
         this.ted = this.data.data[0].ted;
-
-      }
-    );
-    
+      });
     }
+  }
 
   handleFileInput(fileInput : any){
   this.fileToUpload.push(fileInput.target.files[0]);
@@ -88,13 +84,16 @@ details: any;
     );
     
   }
-  
-  onAbout(form : NgForm,token){
-    this.as.update_about(form.value,this.token).subscribe(
-      res => console.log(res)
+  onAbout(form: NgForm) {
+    this.token = this.admins.getAdminToken();
+    if (this.token) {
+      this.as.update_about(form.value, this.token).subscribe(
+        res => console.log(res)
     );
   }
-  
-
-
+}
+onDate(form: NgForm) {
+  const tok = this.admins.removeAdminToken();
+    console.log(form.value);
+}
 }

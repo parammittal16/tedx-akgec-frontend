@@ -5,7 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AuthServerService {
-  readonly rootUrl = 'http://2bf19597.ngrok.io/';
+  readonly rootUrl = 'https://tedx-akgec.herokuapp.com/';
   constructor(private http: HttpClient) { }
 
 
@@ -40,7 +40,7 @@ get_about(token: string){
   return this.http.get(this.rootUrl + 'api/get-about-us',{headers: headers});
 }
 
-update_about(bod: any,token: string){
+update_about(bod: any, token: string) {
   const headers = new HttpHeaders({
     'Content-Type': 'application/json; charset=utf-8',
     'Authorization': 'Bearer ' +  token
@@ -50,8 +50,7 @@ update_about(bod: any,token: string){
   //    tedx: this.dashboard.tedx,
   //    tedx_akgec : this.dashboard.tedx_akgec
   //  }
-
-  return this.http.post(this.rootUrl + 'api/update-about-us',bod,{headers: headers});
+  return this.http.post(this.rootUrl + 'api/update-about-us', bod, {headers: headers});
 }
 
 }

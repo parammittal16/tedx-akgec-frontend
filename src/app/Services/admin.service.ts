@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AdminService {
- adminLI : boolean
+ adminLI: boolean;
   constructor() { }
 
   setAdmintoken(token: string){

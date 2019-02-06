@@ -11,35 +11,26 @@ import { NgForm } from '@angular/forms';
 export class TaAdminComponent implements OnInit {
   data: any;
   error: any;
-  adminLoggedIn = false;
-  constructor(private ass: AuthServerService,private admins: AdminService ) { }
+  constructor(private ass: AuthServerService, private admins: AdminService ) { }
 
   ngOnInit() {
   }
-  check(){
-    return this.admins.adminLoggedIn()
+  check() {
+    return this.admins.adminLoggedIn();
   }
-
-  
-  onLogin(form: NgForm){
+  onLogin(form: NgForm) {
     this.ass.adminLogin(form.value).subscribe(
       res => {
         this.data = res;
         if (this.data.token) {
           this.admins.setAdmintoken(this.data.token);
-          this.adminLoggedIn = this.admins.adminLoggedIn();
-          console.log(this.adminLoggedIn);
         }
         form.resetForm();
       },
       err => {
         this.error = err;
       },
-
     );
-        
   }
-
-  
-  }
+}
 
