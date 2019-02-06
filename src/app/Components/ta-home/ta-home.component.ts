@@ -43,6 +43,6 @@ export class TaHomeComponent implements OnInit {
     document.getElementById(divId).classList.add('is-active');
   }
   onSubmit() {
-    this.http.post('https://2bf19597.ngrok.io/send-mail', this.model).subscribe(res => console.log(res));
+    this.http.post('http://tedx-akgec.herokuapp.com/api/send-mail', this.model).subscribe(res => console.log(res));
   }
 }

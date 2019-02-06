@@ -110,7 +110,7 @@
                 with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
               </div>
             </div>
-            
+
           </div>
         </div>
       </div>
@@ -245,7 +245,7 @@
                   <div class="form-group" class="g-recaptcha mb-md-2">
                       <re-captcha [(ngModel)]="model.response" name="response" required siteKey="6LeRVI8UAAAAAET7d1cbpLV0RJffJPc6ImWF4nf5" #response="ngModel"></re-captcha>
                     </div>
-                    <div [hidden]="response.valid || response.pristine" class="error invalid-feedback">Captcha must be solved</div>
+                    <div [hidden]="response.valid || response.pristine" class="error">Captcha must be solved</div>
                   <button [disabled]="!f.form.valid" class="btn btn-primary w-100 formbut">Submit</button>
                 </form>
               </div>
@@ -286,7 +286,6 @@
         </div>
         </div>
       </footer>
-      
+
       <!-- <button [routerLink]="['sponsors']">View Sponsors</button>
         <button [routerLink]="['admin']">Admin</button> -->
-        
