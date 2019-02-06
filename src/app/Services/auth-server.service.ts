@@ -9,7 +9,7 @@ export class AuthServerService {
   constructor(private http: HttpClient) { }
 
 
-adminLogin(body : any){
+adminLogin(body: any) {
   const headers = new HttpHeaders({
     'Content-Type': 'application/json; charset=utf-8',
    });
@@ -53,25 +53,56 @@ getteam(token) {
    });
   return this.http.get(this.rootUrl + 'api/get-team', {headers: headers});
 }
+delSpeaker(body, token) {
+  const headers = new HttpHeaders({
+    'Authorization': 'Bearer ' + token
+   });
+   return this.http.post(this.rootUrl + 'api/delete-speaker', body, {headers: headers});
+}
+delSponsors(body, token) {
+  const headers = new HttpHeaders({
+    'Authorization': 'Bearer ' + token
+   });
+   return this.http.post(this.rootUrl + 'api/delete-sponsor', body, {headers: headers});
+}
+delTeam(body, token) {
+  const headers = new HttpHeaders({
+    'Authorization': 'Bearer ' + token
+   });
+   return this.http.post(this.rootUrl + 'api/delete-team-member', body, {headers: headers});
+}
+addDate(body, route, token) {
+  const headers = new HttpHeaders({
+    'Authorization': 'Bearer ' + token
+   });
+   return this.http.post(this.rootUrl + route, body, {headers: headers});
+
+}
+getDate(token) {
+  const headers = new HttpHeaders({
+    'Authorization': 'Bearer ' + token
+   });
+   return this.http.get(this.rootUrl + 'api/get-event-date', {headers: headers});
+}
 // uploadImage(fileToUpload: File){
-  
+
 //   const formData: any = new FormData();
-//   const files: Array<File> = this.filesTo 
+//   const files: Array<File> = this.filesTo
 
 //   formData.append('Image', fileToUpload, fileToUpload.name);
 //   return this.http.post(this.rootUrl + 'api/admin-login', formData);
 // }
 
-spkr(formData){
-  this.http.post(this.rootUrl + 'api/admin-login',formData)
+spkr(formData) {
+  this.http.post(this.rootUrl + 'api/admin-login', formData);
 }
- 
-get_about(token: string){
+
+get_about(token: string) {
   const headers = new HttpHeaders({
     'Content-Type': 'application/json; charset=utf-8',
     'Authorization': 'Bearer ' +  token
    });
-  return this.http.get(this.rootUrl + 'api/get-about-us',{headers: headers});
+  return this.http.get(this.rootUrl + 'api/get-about-us', {headers: headers});
 }
 
 update_about(bod: any, token: string) {

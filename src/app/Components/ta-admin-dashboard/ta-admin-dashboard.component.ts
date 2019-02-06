@@ -11,12 +11,16 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./ta-admin-dashboard.component.css']
 })
 export class TaAdminDashboardComponent implements OnInit {
+daysLeft: any;
 data: any;
 token: string;
 ted = '';
 tedx = '';
 tedx_akgec = '';
 date: any;
+dateId: any;
+dateRoute: any;
+dateButton: any;
 imageUrl = '/assets/images/default.png';
 fileToUpload_s: Array<File> = [];
 fileToUpload_p: Array<File> = [];
@@ -39,25 +43,36 @@ details: any;
         this.ted = this.data.data[0].ted;
       });
     }
+    this.as.getDate(this.admins.getAdminToken())
+    .subscribe(res => {
+      let dt: any;
+      dt = res;
+      if ( dt.success) {
+        this.dateRoute = 'api/update-event-date';
+        this.dateButton = 'Update';
+        this.daysLeft = dt.diffDays;
+        this.dateId = dt.id;
+      } else {
+        this.dateRoute = 'api/create-event-date';
+        this.dateButton = 'Add';
+      }}, err => console.log(err));
   }
-  handleFileInput_s(fileInput: any) {
-    this.fileToUpload_s.push(fileInput.target.files[0]);
+  handleFileInput_s(fileInput: any, pos) {
+    this.fileToUpload_s[pos] = (fileInput.target.files[0]);
   }
-  handleFileInput_p(fileInput: any) {
-    this.fileToUpload_p.push(fileInput.target.files[0]);
+  handleFileInput_p(fileInput: any, pos) {
+    this.fileToUpload_p[pos] = (fileInput.target.files[0]);
   }
-  handleFileInput_t(fileInput: any) {
-    this.fileToUpload_t.push(fileInput.target.files[0]);
+  handleFileInput_t(fileInput: any, pos) {
+    this.fileToUpload_t[pos] = (fileInput.target.files[0]);
   }
 
-  add(x: any){
-    if  (x=='s'){
+  add(x: any) {
+    if  (x === 's') {
       this.sp.push(this.sp.length);
-    }
-    else if(x=='t'){
+    } else if (x === 't') {
       this.t_team.push(this.t_team.length);
-    }
-    else if(x=='w'){
+    } else if ( x === 'p') {
       this.w_team.push(this.w_team.length);
     }
   }
@@ -98,9 +113,19 @@ details: any;
     .subscribe(res => console.log(res), err => console.log(err));
   }
 
-
-onDate(form: NgForm) {
-  const tok = this.admins.removeAdminToken();
-    console.log(form.value);
+onDate(fo: NgForm) {
+    console.log(fo.value);
+    const d_comp = fo.value.date.split('-');
+    const d_new = `${d_comp[1]}/${d_comp[2]}/${d_comp[0]}`;
+    this.as.addDate({ date: d_new, id: +this.dateId }, this.dateRoute, this.admins.getAdminToken())
+    .subscribe(res => console.log(res), err => console.log(err));
+}
+onAbout(f: NgForm) {
+  this.token = this.admins.getAdminToken();
+  if (this.token) {
+    this.as.update_about(f.value, this.token).subscribe(
+      res => console.log(res)
+  );
+}
 }
 }

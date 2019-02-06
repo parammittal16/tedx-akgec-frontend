@@ -15,6 +15,13 @@ export class ViewsponsorsComponent implements OnInit {
   ngOnInit() {
     this.as.getsponsors(this.ad.getAdminToken()).subscribe(res => this.data = res, err => console.log(err));
   }
+  delete_p(delId) {
+    this.as.delSponsors({ id: +delId}, this.ad.getAdminToken())
+    .subscribe(res => {
+      this.as.getsponsors(this.ad.getAdminToken()).subscribe(res2 => this.data = res2, err => console.log(err));
+    },
+    err => console.log(err));
+  }
 
 
 }

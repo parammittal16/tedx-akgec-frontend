@@ -14,5 +14,12 @@ export class ViewspeakersComponent implements OnInit {
   ngOnInit() {
     this.as.getspeakers(this.ad.getAdminToken()).subscribe(res => this.data = res, err => console.log(err));
   }
+  delete_s(delId) {
+    this.as.delSpeaker({ id: +delId}, this.ad.getAdminToken())
+    .subscribe(res => {
+        this.as.getspeakers(this.ad.getAdminToken()).subscribe(rese => this.data = rese, err => console.log(err));
+    },
+    err => console.log(err));
+  }
 
 }

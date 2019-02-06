@@ -15,5 +15,13 @@ export class ViewteamComponent implements OnInit {
   ngOnInit() {
     this.as.getteam(this.ad.getAdminToken()).subscribe(res => this.data = res, err => console.log(err));
   }
+  delete_t(delId) {
+    this.as.delTeam({ id: +delId}, this.ad.getAdminToken())
+    .subscribe(res => {
+      this.as.getteam(this.ad.getAdminToken()).subscribe(res2 => this.data = res2, err => console.log(err));
+    },
+    err => console.log(err));
+  }
+
 
 }

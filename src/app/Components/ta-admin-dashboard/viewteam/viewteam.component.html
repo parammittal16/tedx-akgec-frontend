@@ -5,7 +5,8 @@
         <th scope="col">Name</th>
         <th scope="col">Designantion</th>
         <th scope="col">Image</th>
-        <th scope="col">Edit</th>
+        <!-- <th scope="col">Edit</th> -->
+        <th scope="col">Delete</th>
       </tr>
     </thead>
     <tbody>
@@ -13,8 +14,9 @@
         <th scope="row">{{i+1}}</th>
         <td>{{r?.name}}</td>
         <td>{{r.designation}}</td>
-        <td>{{r.imgurl}}</td>
-        <td><button class="btn btn-primary">Edit</button></td>
+        <td><a href="https://tedx-akgec.herokuapp.com/api/uploads/{{r.imgurl}}">Image</a></td>
+        <!-- <td><button class="btn btn-primary">Edit</button></td> -->
+        <td><button class="btn btn-danger" (click)="delete_t(r?.id)">Delete</button></td>
       </tr>
     </tbody>
   </table>

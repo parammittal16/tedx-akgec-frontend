@@ -7,7 +7,7 @@ export class AdminService {
  adminLI: boolean;
   constructor() { }
 
-  setAdmintoken(token: string){
+  setAdmintoken(token: string) {
     localStorage.setItem('admin', token);
   }
 
@@ -15,17 +15,14 @@ export class AdminService {
     return localStorage.getItem('admin');
   }
 
-  adminLoggedIn(){
-    if (this.getAdminToken()){
+  adminLoggedIn() {
+    if (this.getAdminToken()) {
         return true;
     }
         return false;
   }
 
-  removeAdminToken(){
+  removeAdminToken() {
     localStorage.removeItem('admin');
   }
-
-  
-
 }
