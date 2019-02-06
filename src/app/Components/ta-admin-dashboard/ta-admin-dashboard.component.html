@@ -32,7 +32,7 @@
     </ul>
   </div>
 
-  <div class="card-body" *ngIf="router.url === '/admin/about'" >
+  <div class="card-body" *ngIf="checkRoute('/admin/about')" >
 
     <h3 class="card-title" style="margin-bottom: 30px;">About Us</h3>
 
@@ -74,7 +74,7 @@
   </div>
 
 
-  <div class="card-body" *ngIf="router.url === '/admin/speakers'" >
+  <div class="card-body" *ngIf="checkRoute('/admin/speakers')" >
 
 
     <form (ngSubmit)="onSpeakers(s)" #s=ngForm>
@@ -127,7 +127,7 @@
   </div>
 
 
-  <div class="card-body" *ngIf="router.url === '/admin/team'" >
+  <div class="card-body" *ngIf="checkRoute('/admin/team')" >
 
     <form (ngSubmit)="onTeam(t)" #t=ngForm>
 
@@ -174,7 +174,7 @@
     </form>
 
   </div>
-  <div class="card-body" *ngIf="router.url === '/admin/sponsors'" >
+  <div class="card-body" *ngIf="checkRoute('/admin/sponsors')" >
 
     <form (ngSubmit)="onSponsors(a)" #a=ngForm>
       <div *ngFor="let container of w_team; let i = index">
@@ -199,7 +199,7 @@
 
       </form>
     </div>
-    <div class="card-body" *ngIf="router.url === '/admin/date'" >
+    <div class="card-body" *ngIf="checkRoute('/admin/date')" >
 
       <h3 class="card-title" style="margin-bottom: 30px;">Event Date</h3>
 
@@ -223,13 +223,30 @@
 
       </form>
     </div>
-    <div class="card-body" *ngIf="router.url === '/admin/view-sponsors'" >
+    <div class="card-body" *ngIf="checkRoute('/admin/view-sponsors')" >
       <app-viewsponsors></app-viewsponsors>
     </div>
-    <div class="card-body" *ngIf="router.url === '/admin/view-speakers'" >
+    <div class="card-body" *ngIf="checkRoute('/admin/view-speakers')" >
       <app-viewspeakers></app-viewspeakers>
     </div>
-    <div class="card-body" *ngIf="router.url === '/admin/view-team'" >
+    <div class="card-body" *ngIf="checkRoute('/admin/view-team')" >
       <app-viewteam></app-viewteam>
     </div>
   </div>
+  <button id="openModalButton" data-toggle="modal" data-target="#exampleModal" [hidden]="true"></button>
+  <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+          <div class="container-fuild">
+            <button type="button" class="close m-3" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="row no-gutters">
+              <div class="col-12 col-sm-12 col-md-7 p-4">
+                <h4 style="color: green;">Updated</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

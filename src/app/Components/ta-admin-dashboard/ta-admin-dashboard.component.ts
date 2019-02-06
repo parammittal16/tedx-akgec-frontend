@@ -69,6 +69,9 @@ details: any;
     this.fileToUpload_t[pos] = (fileInput.target.files[0]);
   }
 
+  checkRoute(r) {
+    return r === this.router.url;
+  }
   add(x: any) {
     if  (x === 's') {
       this.sp.push(this.sp.length);
@@ -92,7 +95,10 @@ details: any;
       formData.append('designation', f.value[`s_post${i}`]);
     }
     this.as.postspeakers(formData, this.admins.getAdminToken())
-    .subscribe(res => console.log(res), err => console.log(err));
+    .subscribe(res => {
+      document.getElementById('openModalButton').click();
+      console.log(res);
+    }, err => console.log(err));
   }
   onSponsors(f) {
     const formData: any = new FormData();
@@ -101,7 +107,10 @@ details: any;
       formData.append('image', files[i]);
     }
     this.as.postsponsors(formData, this.admins.getAdminToken())
-    .subscribe(res => console.log(res), err => console.log(err));
+    .subscribe(res => {
+      document.getElementById('openModalButton').click();
+      console.log(res);
+    }, err => console.log(err));
   }
   onTeam(f) {
     const formData: any = new FormData();
@@ -112,7 +121,10 @@ details: any;
       formData.append('designation', f.value[`tt_desg${i}`]);
     }
     this.as.postteam(formData, this.admins.getAdminToken())
-    .subscribe(res => console.log(res), err => console.log(err));
+    .subscribe(res => {
+      document.getElementById('openModalButton').click();
+      console.log(res);
+    }, err => console.log(err));
   }
 
 onDate(fo: NgForm) {
@@ -120,14 +132,20 @@ onDate(fo: NgForm) {
     const d_comp = fo.value.date.split('-');
     const d_new = `${d_comp[1]}/${d_comp[2]}/${d_comp[0]}`;
     this.as.addDate({ date: d_new, id: +this.dateId }, this.dateRoute, this.admins.getAdminToken())
-    .subscribe(res => console.log(res), err => console.log(err));
+    .subscribe(res => {
+      document.getElementById('openModalButton').click();
+      console.log(res);
+    }, err => console.log(err));
 }
 onAbout(f: NgForm) {
   this.token = this.admins.getAdminToken();
   if (this.token) {
-    this.as.update_about(f.value, this.token).subscribe(
-      res => console.log(res)
-  );
+    this.as.update_about(f.value, this.token)
+    .subscribe(res => {
+      document.getElementById('openModalButton').click();
+      console.log(res);
+    }, err => console.log(err)
+    );
 }
 }
 }

@@ -7,7 +7,7 @@ import { TaSponsorsComponent } from './Components/ta-sponsors/ta-sponsors.compon
 
 const appRoutes: Routes = [
    { path: '', component: TaHomeComponent },
-   { path: 'admin' , component:  TaAdminComponent, children:[
+   { path: 'admin' , component:  TaAdminComponent, children: [
     { path: 'about', component: TaHomeComponent },
     { path: 'speakers', component: TaHomeComponent },
     { path: 'team', component: TaHomeComponent },

@@ -218,10 +218,10 @@
                 </form>
               </div>
               <div class="contactus-links-container col-lg-6 col-md-6 col-sm-12 my-auto">
-                <div class="sociallinks"><a href="" ><i class="fa fa-facebook" aria-hidden="true"></i>Facebook</a></div>
-                <div class="sociallinks"><a href="" ><i class="fa fa-instagram" aria-hidden="true"></i>Instagram</a></div>
-                <div class="sociallinks"><a href="" ><i class="fa fa-linkedin" aria-hidden="true"></i>LinkdeIn</a></div>
-                <div class="sociallinks"><a href="" ><i class="fa fa-location-arrow" aria-hidden="true"></i>Find-us</a></div>
+                <div class="sociallinks"><a target="_blank" href="https://www.facebook.com/tedxakgec/" ><i class="fa fa-facebook" aria-hidden="true"></i>Facebook</a></div>
+                <div class="sociallinks"><a target="_blank" href="https://www.instagram.com/tedxakgec/?hl=en" ><i class="fa fa-instagram" aria-hidden="true"></i>Instagram</a></div>
+                <div class="sociallinks"><a target="_blank" href="https://www.linkedin.com/in/tedx-akgec-8b0974179/" ><i class="fa fa-linkedin" aria-hidden="true"></i>LinkdeIn</a></div>
+                <div class="sociallinks"><a target="_blank" href="https://goo.gl/maps/ST5HeG5eJmN2" ><i class="fa fa-location-arrow" aria-hidden="true"></i>Find-us</a></div>
               </div>
             </div>
           </div>
@@ -256,6 +256,24 @@
         </div>
         </div>
       </footer>
+      <button id="openModalButton" data-toggle="modal" data-target="#exampleModal" [hidden]="true"></button>
+      <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+              <div class="container-fuild">
+                <button type="button" class="close m-3" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                <div class="row no-gutters">
+                  <div class="col-12 col-sm-12 col-md-7 p-4">
+                    <h4 style="color: green;" *ngIf="formRes === true">Response Recorded ! Thank You !</h4>
+                    <h4 style="color:#f94602;" *ngIf="formRes === false">Something Went Wrong</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
       <!-- <button [routerLink]="['sponsors']">View Sponsors</button>
         <button [routerLink]="['admin']">Admin</button> -->
