@@ -18,12 +18,14 @@ export class TaHomeComponent implements OnInit {
   data: any;
   model: any = {};
   formRes: boolean;
+  daysLeft: any;
   constructor(private d: DataService, private http: HttpClient) { }
   ngOnInit() {
     AOS.init();
     this.d.getData()
     .subscribe(res => {
       this.data = res;
+      this.daysLeft = +this.data.data.eventDate;
     }, err => console.log(err));
     const width = $('.g-recaptcha').parent().width();
     if (width < 302) {

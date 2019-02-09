@@ -13,22 +13,28 @@
 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
   <ul class="navbar-nav">
     <li id="nav-home" class="nav-item is-active">
-      <a class="nav-link" (click)="scrollToElement(home, 'nav-home')">Home</a>
+      <a class="nav-link" (click)="scrollToElement(home, 'nav-home')" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+      aria-expanded="false" aria-label="Toggle navigation">Home</a>
     </li>
     <li id="nav-aboutus" class="nav-item">
-      <a class="nav-link" (click)="scrollToElement(aboutus, 'nav-aboutus')">About us</a>
+      <a class="nav-link" (click)="scrollToElement(aboutus, 'nav-aboutus')" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+      aria-expanded="false" aria-label="Toggle navigation">About us</a>
     </li>
     <li id="nav-speakers" class="nav-item">
-      <a class="nav-link" (click)="scrollToElement(speakers, 'nav-speakers')">Speakers</a>
+      <a class="nav-link" (click)="scrollToElement(speakers, 'nav-speakers')" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+      aria-expanded="false" aria-label="Toggle navigation">Speakers</a>
     </li>
     <li id="nav-sponsors" class="nav-item">
-      <a class="nav-link" (click)="scrollToElement(sponsors, 'nav-sponsors')">Sponsors</a>
+      <a class="nav-link" (click)="scrollToElement(sponsors, 'nav-sponsors')" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+      aria-expanded="false" aria-label="Toggle navigation">Sponsors</a>
     </li>
     <li id="nav-team" class="nav-item">
-      <a class="nav-link" (click)="scrollToElement(team, 'nav-team')">Team</a>
+      <a class="nav-link" (click)="scrollToElement(team, 'nav-team')" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+      aria-expanded="false" aria-label="Toggle navigation">Team</a>
     </li>
     <li id="nav-contactus" class="nav-item">
-      <a class="nav-link" (click)="scrollToElement(contactus, 'nav-contactus')">Contact us</a>
+      <a class="nav-link" (click)="scrollToElement(contactus, 'nav-contactus')" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+      aria-expanded="false" aria-label="Toggle navigation">Contact us</a>
     </li>
   </ul>
   <!-- <form class="form-inline my-2 my-lg-0">
@@ -46,7 +52,7 @@
         <div data-aos="fade-up" data-aos-duration="3000">TOGETHER</div>
         <div data-aos="fade-up" data-aos-duration="4000">
           <span class="m-element">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br/>
-          <a target="_blank" href="" class="m-button">Book Ticket</a>
+          <a target="_blank" href="https://i.imgur.com/LCc5XEp.png" class="m-button">Book tickets</a>
         </div>
       </div>
     </div>
@@ -55,8 +61,11 @@
     </div>
     <div data-aos="zoom-in" data-aos-duration="3000" class="m-counter-cont col-md-4">
       <div class="m-counter">
-        <span class="m-days">{{data?.data?.eventDate}}</span><br/>
-        <span>days left</span>
+        <span *ngIf="daysLeft > 0" class="m-days">{{data?.data?.eventDate}}</span><br/>
+        <span *ngIf="daysLeft > 1">days left</span>
+        <span *ngIf="daysLeft === 1">day left</span>
+        <h1 *ngIf="daysLeft === 0" style="margin:15px;font-weight: 700;">The Event is Today</h1>
+        <h1 *ngIf="daysLeft < 0" style="margin:15px;font-weight: 700;">The Event has Ended</h1>
         <img class="counter-dash1" src="../../../assets/images/dash.svg" alt="">
         <img class="counter-dash2" src="../../../assets/images/dash.svg" alt="">
         <img class="counter-plus1" src="../../../assets/images/plus2.svg" alt="">
