@@ -46,7 +46,7 @@ export class TaHomeComponent implements OnInit {
     document.getElementById(divId).classList.add('is-active');
   }
   onSubmit() {
-    this.http.post('http://tedx-akgec.herokuapp.com/api/send-mail', this.model)
+    this.http.post('https://tedx-akgec.herokuapp.com/api/send-mail', this.model)
     .subscribe(res => {
       this.formRes = true;
       document.getElementById('openModalButton').click();
