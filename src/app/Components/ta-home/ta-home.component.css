@@ -324,7 +324,7 @@
 }
 
 .about-content{
-  text-align: center;
+  text-align: justify;
   font-size: 1em;
 }
 
@@ -379,12 +379,13 @@
 }
 .speaker-desc{
   margin-right:0.5em;
+  text-align: justify;
 }
 .modal-content{
   border-radius:20px;
 }
 .ted-logo{
-  height: 1.1em;
+  height: 1.5em;
   margin:0.5em;
 }
 @media only screen and (max-width: 768px) {
@@ -442,7 +443,7 @@
     background-color: #ffffffc2;
   }
   .footer-para {
-      text-align: center;
+      text-align: justify;
   }
 }
 
