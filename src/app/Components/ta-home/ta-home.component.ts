@@ -13,7 +13,7 @@ import { HttpClient } from '@angular/common/http';
 export class TaHomeComponent implements OnInit {
   defaultImage = 'https://i.imgur.com/efowHsC.png';
   imgURL = 'https://www.tedxakgec.com/api/uploads/';
-  ii = "http://c93fea60bb98e121740fc38ff31162a8.s3.amazonaws.com/wp-content/uploads/2016/02/500startups.png";
+  ii = 'http://c93fea60bb98e121740fc38ff31162a8.s3.amazonaws.com/wp-content/uploads/2016/02/500startups.png';
   offset = 100;
   spDetIndex = 0;
   data: any;
