@@ -52,7 +52,7 @@
         <div data-aos="fade-up" data-aos-duration="3000">TOGETHER</div>
         <div data-aos="fade-up" data-aos-duration="4000">
           <span class="m-element">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br/>
-          <a target="_blank" href="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRJS9-k-skB_nl9Lq-aWLBzXCcnbSKUybpU5nyOtBjH1yT8VDZ3yDgatUhmkQ" class="m-button d-md-inline d-sm-none d-none">Book tickets</a>
+          <a target="_blank" href="https://www.townscript.com/e/tedxakgec-443430" class="m-button d-md-inline d-sm-none d-none">Book tickets</a>
         </div>
       </div>
     </div>
@@ -74,7 +74,7 @@
     </div>
     <div data-aos="zoom-in" data-aos-duration="3000" class="col-md-4 d-md-none d-sm-block d-block">
       <div class="m-title" style="margin: 0.5em 0 1em 0">
-          <a target="_blank" href="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRJS9-k-skB_nl9Lq-aWLBzXCcnbSKUybpU5nyOtBjH1yT8VDZ3yDgatUhmkQ" class="m-button">Book tickets</a>
+          <a target="_blank" href="https://www.townscript.com/e/tedxakgec-443430" class="m-button">Book tickets</a>
         </div>
       </div>
     <div style="height: 100vh" class="col-md-4 m-landing_img d-md-block d-sm-none d-none" data-aos-duration="3000" data-aos="zoom-in-left">
@@ -123,25 +123,23 @@
         <div class="container p-3">
           <div  data-aos="fade-in" data-aos-duration="2000" class="row no-gutters">
             <div class="col-6 col-sm-6 col-md-2 speaker-card my-2" *ngFor="let item of data?.data?.speakers;let i = index;">
-              <div class="img-back">
-                <img [defaultImage]="defaultImage" [lazyLoad]="getSpeakerURL(i)" [offset]="offset" class="speaker-img" (click)="speakerDetailIndex(i)" data-toggle="modal" data-target="#exampleModalCenter">
-              </div>
+                <img style="border-radius:50%;" [defaultImage]="defaultImage" [lazyLoad]="getSpeakerURL(i)" [offset]="offset" class="speaker-img" (click)="speakerDetailIndex(i)" data-toggle="modal" data-target="#exampleModalCenter">
               <span class="speaker-name">{{data?.data?.speakers[i]?.name}}</span><br/>
               <span class="speaker-post">{{data?.data?.speakers[i]?.designation}}</span>
             </div>
           </div>
         </div>
-        <div class="modal fade bd-example-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal fade bd-example-modal-xl" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
             <div class="modal-content">
               <div class="container-fuild">
                 <button type="button" class="close m-3" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
                 <div class="row no-gutters">
-                  <div class="col-12 col-sm-12 col-md-5 p-4 speaker-img-modal-bg"><img src="https://tedx-akgec.herokuapp.com/api/uploads/{{data?.data?.speakers[spDetIndex].imgurl}}" class="speaker-img-modal"></div>
+                  <div class="col-12 col-sm-12 col-md-5 p-4 speaker-img-modal-bg"><img src="https://www.tedxakgec.com/api/uploads/{{data?.data?.speakers[spDetIndex].imgurl}}" class="speaker-img-modal"></div>
                   <div class="col-12 col-sm-12 col-md-7 p-4 description">
-                    <h2>{{data?.data?.speakers[spDetIndex]?.name}}</h2>
+                    <h2 style="font-weight: 700">{{data?.data?.speakers[spDetIndex]?.name}}</h2>
                     <h4>{{data?.data?.speakers[spDetIndex]?.designation}}</h4>
                     <div class="speaker-desc">
                       {{data?.data?.speakers[spDetIndex]?.description}}
@@ -210,8 +208,8 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <label>Email address</label>
-                    <input type="email" class="form-control" placeholder="Enter email" name="email" [(ngModel)]="model.email" #email="ngModel" [ngClass]="{ 'is-invalid': email.touched && email.invalid }" pattern='^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$' required>
+                    <label>Email Address</label>
+                    <input type="email" class="form-control" placeholder="Enter Email" name="email" [(ngModel)]="model.email" #email="ngModel" [ngClass]="{ 'is-invalid': email.touched && email.invalid }" pattern='^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$' required>
                     <div *ngIf="email.touched && email.invalid" class="invalid-feedback">
                       <div *ngIf="email.errors.required">Email is required</div>
                       <div *ngIf="email.errors.pattern">Enter a valid email</div>
@@ -234,7 +232,7 @@
               <div class="contactus-links-container col-lg-6 col-md-6 col-sm-12 my-auto">
                 <div class="sociallinks"><a target="_blank" href="https://www.facebook.com/TEDXAKGEC2019/" ><i class="fa fa-facebook" aria-hidden="true"></i>Facebook</a></div>
                 <div class="sociallinks"><a target="_blank" href="https://www.instagram.com/tedxakgec/?hl=en" ><i class="fa fa-instagram" aria-hidden="true"></i>Instagram</a></div>
-                <div class="sociallinks"><a target="_blank" href="https://www.linkedin.com/in/tedx-akgec-8b0974179/" ><i class="fa fa-linkedin" aria-hidden="true"></i>LinkdeIn</a></div>
+                <div class="sociallinks"><a target="_blank" href="https://www.linkedin.com/in/tedx-akgec-8b0974179/" ><i class="fa fa-linkedin" aria-hidden="true"></i>LinkedIn</a></div>
                 <div class="sociallinks"><a target="_blank" href="https://goo.gl/maps/ST5HeG5eJmN2" ><i class="fa fa-location-arrow" aria-hidden="true"></i>Find-us</a></div>
               </div>
             </div>
@@ -279,7 +277,7 @@
                   <span aria-hidden="true">&times;</span>
                 </button>
                 <div class="row no-gutters">
-                  <div class="col-12 col-sm-12 col-md-7 p-4">
+                  <div class="mx-auto col-12 col-sm-12 col-md-7 p-4">
                     <h4 style="color: green;" *ngIf="formRes === true">Response Recorded ! Thank You !</h4>
                     <h4 style="color:#f94602;" *ngIf="formRes === false">Something Went Wrong</h4>
                   </div>

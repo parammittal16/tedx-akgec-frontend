@@ -75,8 +75,7 @@
 
 
   <div class="card-body" *ngIf="checkRoute('/admin/speakers')" >
-
-
+    <h2 class="card-title" style="margin-bottom: 30px; font-weight: 700;">Add Speakers( 512px * 512px)(max 100KB)</h2>
     <form (ngSubmit)="onSpeakers(s)" #s=ngForm>
 
       <div *ngFor="let container of sp; let k = index">

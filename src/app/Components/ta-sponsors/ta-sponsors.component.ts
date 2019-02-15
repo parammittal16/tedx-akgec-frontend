@@ -20,7 +20,7 @@ export class TaSponsorsComponent implements OnInit {
     }, err => console.log(err));
   }
   getSponsorsURL(index) {
-    return `https://tedx-akgec.herokuapp.com/api/uploads/${this.data.data[index].imgurl}`;
+    return `https://www.tedxakgec.com/api/uploads/${this.data.data[index].imgurl}`;
   }
 // [ngStyle]="{'background-image':'url(getSponsorsURL(i))'}"
 }
