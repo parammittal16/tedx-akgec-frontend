@@ -66,7 +66,7 @@ export class TaHomeComponent implements OnInit {
   }
   getTeamURL(ind) {
     if (this.data) {
-    return `httpss://www.tedxakgec.com/api/uploads/${this.data.data.team[ind].imgurl}`;
+    return `https://www.tedxakgec.com/api/uploads/${this.data.data.team[ind].imgurl}`;
     }
   }
 }
