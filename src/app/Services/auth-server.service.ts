@@ -5,7 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AuthServerService {
-  readonly rootUrl = 'https://tedx-akgec.herokuapp.com/';
+  readonly rootUrl = 'https://www.tedxakgec.com/';
   constructor(private http: HttpClient) { }
 
 

@@ -10,7 +10,7 @@
     <tbody>
       <tr *ngFor="let r of data?.data;let i = index">
         <th scope="row">{{i+1}}</th>
-        <td><a href="https://tedx-akgec.herokuapp.com/api/uploads/{{r.imgurl}}">Image</a></td>
+        <td><a href="https://www.tedxakgec.com/api/uploads/{{r.imgurl}}">Image</a></td>
         <!-- <td><button class="btn btn-primary">Edit</button></td> -->
         <td><button class="btn btn-danger" (click)="delete_p(r?.id)">Delete</button></td>
       </tr>

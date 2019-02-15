@@ -152,6 +152,7 @@
 .foo {
   color: #fff;
   background-color: #000;
+  text-align: justify;
 }
 .footerlogo {
   width:100%;
@@ -345,8 +346,10 @@
 .img-back{
   background-color: #ff2b06;
   border-radius: 50%;
+
 }
 .speaker-card{
+  cursor: pointer;
   padding: 0.5em;
   text-align: center;
 }
@@ -359,12 +362,13 @@
 }
 .speaker-img-modal{
   width: 90%;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
+  border-radius: 20px;
 }
 .speaker-img-modal-bg {
     text-align: center;
     background: linear-gradient(to bottom right, #fa4f31, #eb3c29);
+    border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
 }
 .description{
   padding: 1em;
