@@ -12,7 +12,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class TaHomeComponent implements OnInit {
   defaultImage = 'https://i.imgur.com/efowHsC.png';
-  imgURL = 'https://www.tedxakgec.com/api/uploads/';
+  imgURL = 'http://117.55.241.44/api/uploads/';
   ii = 'http://c93fea60bb98e121740fc38ff31162a8.s3.amazonaws.com/wp-content/uploads/2016/02/500startups.png';
   offset = 100;
   spDetIndex = 0;
@@ -47,7 +47,7 @@ export class TaHomeComponent implements OnInit {
     document.getElementById(divId).classList.add('is-active');
   }
   onSubmit() {
-    this.http.post('https://www.tedxakgec.com/api/send-mail', this.model)
+    this.http.post('http://117.55.241.44/api/send-mail', this.model)
     .subscribe(res => {
       this.formRes = true;
       document.getElementById('openModalButton').click();
@@ -61,12 +61,12 @@ export class TaHomeComponent implements OnInit {
   }
   getSpeakerURL(ind) {
     if (this.data) {
-    return `https://www.tedxakgec.com/api/uploads/${this.data.data.speakers[ind].imgurl}`;
+    return `http://117.55.241.44/api/uploads/${this.data.data.speakers[ind].imgurl}`;
     }
   }
   getTeamURL(ind) {
     if (this.data) {
-    return `https://www.tedxakgec.com/api/uploads/${this.data.data.team[ind].imgurl}`;
+    return `http://117.55.241.44/api/uploads/${this.data.data.team[ind].imgurl}`;
     }
   }
 }

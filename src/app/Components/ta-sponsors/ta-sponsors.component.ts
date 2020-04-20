@@ -20,7 +20,7 @@ export class TaSponsorsComponent implements OnInit {
     }, err => console.log(err));
   }
   getSponsorsURL(index) {
-    return `https://www.tedxakgec.com/api/uploads/${this.data.data[index].imgurl}`;
+    return `http://117.55.241.44/api/uploads/${this.data.data[index].imgurl}`;
   }
 // [ngStyle]="{'background-image':'url(getSponsorsURL(i))'}"
 }

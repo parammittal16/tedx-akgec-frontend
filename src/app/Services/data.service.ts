@@ -10,10 +10,10 @@ export class DataService {
 
   getData() {
     // return this.http.get('https://randomuser.me/api/?results=' + num);
-    return this.http.get('https://www.tedxakgec.com/api/get-all');
+    return this.http.get('http://117.55.241.44/api/get-all');
   }
   getSponsors() {
     // return this.http.get('https://randomuser.me/api/?results=' + num);
-    return this.http.get('https://www.tedxakgec.com/api/get-sponsors');
+    return this.http.get('http://117.55.241.44/api/get-sponsors');
   }
 }
